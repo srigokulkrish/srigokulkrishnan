@@ -1,0 +1,12 @@
+:root {
+    --bs-primary: var(--bs-brand);
+    --bs-link-color-rgb: var(--bs-brand-rgb);
+    --bs-link-hover-color-rgb: var(--bs-brand-rgb);
+    --bs-primary-rgb: var(--bs-brand-rgb);
+    --bs-soft-primary: var(--bs-soft-navy);
+    --bs-pale-primary: var(--bs-pale-navy);
+    --bs-bullet-soft-primary: var(--bs-bullet-soft-navy);
+    --bs-icon-fill-primary: var(--bs-icon-fill-navy);
+    --bs-icon-solid-fill-primary: var(--bs-icon-solid-fill-navy);
+    --bs-border-soft-primary: var(--bs-border-soft-navy);
+  }
