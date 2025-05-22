@@ -23834,7 +23834,7 @@ a.hover-3.link-ash:before {
 .link-dark:hover,
 a.text-reset:hover,
 .text-reset a:hover {
-  color: var(--bs-primary) !important;
+ 
 }
 [class*=text-] .text-reset:hover {
   color: inherit !important;
