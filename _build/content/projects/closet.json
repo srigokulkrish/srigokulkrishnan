@@ -1,0 +1,203 @@
+{
+  "title": "Closet",
+  "tagline": "Dress Your Story",
+  "meta": [
+    [
+      "Type",
+      "Case study"
+    ],
+    [
+      "Duration",
+      "48 hrs sprint"
+    ],
+    [
+      "Platform",
+      "Mobile app"
+    ]
+  ],
+  "links": [
+    "https://www.figma.com/proto/mTuKEsZDdbvZ0t3LMD4JvC/Portfolio?node-id=133-6143&viewport=491%2C246%2C0.05&t=ZUDxgMUiof4R3DkY-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=133%3A6143"
+  ],
+  "sections": [
+    {
+      "heading": "About the project",
+      "body": [
+        {
+          "p": "This project focuses on revamping a hypothetical clothing e-commerce app called \"Closet\" to increase online sales. We'll assume Closet has a user base but struggles with conversion rates."
+        }
+      ]
+    },
+    {
+      "heading": "The problem",
+      "body": [
+        {
+          "p": "Possible reasons for low sales:"
+        },
+        {
+          "list": [
+            "Undifferentiated user experience: Generic product displays and lack of personalization might make Closet forgettable compared to competitors",
+            "Poor product discovery: Difficulty finding desired items due to weak filtering and search options",
+            "Friction in the buying journey: Complex checkout processes or lack of trust signals can deter purchases."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The goal",
+      "body": [
+        {
+          "p": "Revamping Closet with a focus on :"
+        },
+        {
+          "list": [
+            "Personalized style inspiration: Leverage user data and preferences to recommend outfits and curate collections",
+            "Enhanced product discovery: Allow users to filter and search by various attributes (style, occasion, fabric) and integrate visual search using photos",
+            "Seamless checkout: Streamline the checkout process with guest checkout options and secure payment methods",
+            "Integrate a 3D / AR clothing visualization feature allowing users to see highly realistic models of clothes on a variety of body types."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Deliverables",
+      "body": [
+        {
+          "list": [
+            "User Research",
+            "Empathy map",
+            "Persona",
+            "Information Architecture",
+            "Wireframe & Visual Design"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "The Double Diamond approach",
+      "body": [
+        {
+          "img": "./assets/img/dd.jpg",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "heading": "Empathy map",
+      "body": [
+        {
+          "p": "The empathy map will visualize user needs, frustrations, and behaviors related to online clothing shopping."
+        },
+        {
+          "img": "./assets/img/closetemp.png",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "heading": "Persona",
+      "body": [
+        {
+          "img": "./assets/img/closet Persona.png",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "heading": "Storyboard: how it works",
+      "body": [
+        {
+          "p": "Storyboarding is a visual planning tool that helps predict and refine how users will experience a product. (This focuses on the planning and improvement aspect)"
+        },
+        {
+          "img": "./assets/img/story board.png",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "heading": "User flow",
+      "body": [
+        {
+          "p": "User flow creation streamlined my understanding of app navigation and task completion."
+        },
+        {
+          "img": "./assets/img/closetuser.png",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "heading": "Information architecture",
+      "body": [
+        {
+          "p": "The goal of IA is to create a user experience that is intuitive and efficient. Users shouldn't have to waste time hunting for information – they should be able to find what they need quickly and easily."
+        },
+        {
+          "img": "./assets/img/travelmate info.png",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "heading": "Sketch",
+      "body": [
+        {
+          "p": "I tried sketching using CRAZY 8 method. The goal is to push beyond your first idea, frequently the least innovative, and to generate a wide variety of solutions to your challenge."
+        },
+        {
+          "img": "./assets/img/sketch.jpg",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "heading": "UI style guide",
+      "body": [
+        {
+          "list": [
+            "I have chosen Orange as my primary color, as Orange comes in a wide range of shades and tones, conveys a powerful message of energy, innovation, and approachability. Our vibrant and energetic approach sets us apart, making every experience with us friendly, approachable, and full of enthusiasm.",
+            "I have used Sans-Serif typeface \"Poppins\" as poppins offers a range of weights (thin, light, regular, medium, semi-bold, bold, extra-bold) and includes italics. This allows you to create a clear hierarchy between headings, subheadings, body text, and buttons."
+          ]
+        },
+        {
+          "img": "./assets/img/stylecomponents.png",
+          "caption": ""
+        },
+        {
+          "img": "./assets/img/fontcomponents.png",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "heading": "Wireframes & visual design",
+      "body": [
+        {
+          "img": "./assets/img/Intro.png",
+          "caption": ""
+        },
+        {
+          "img": "./assets/img/clos1.png",
+          "caption": ""
+        },
+        {
+          "img": "./assets/img/clos2.png",
+          "caption": ""
+        },
+        {
+          "img": "./assets/img/clos3.png",
+          "caption": ""
+        },
+        {
+          "img": "./assets/img/clos4.png",
+          "caption": ""
+        },
+        {
+          "img": "./assets/img/clos5.png",
+          "caption": ""
+        }
+      ]
+    }
+  ],
+  "hero": "./assets/img/banner11.png"
+}

@@ -1,0 +1,167 @@
+{
+  "title": "AstusX",
+  "tagline": "Charting new entrepreneurial horizons",
+  "meta": [
+    [
+      "Role",
+      "Founder & designer"
+    ],
+    [
+      "Scope",
+      "Brand identity, marketing assets, websites"
+    ]
+  ],
+  "links": [],
+  "sections": [
+    {
+      "heading": "My journey",
+      "body": [
+        {
+          "p": "As a designer, my journey has been a whirlwind of adventure, travel, learning, and the joy of meeting new people. Each experience has shaped me into the designer I am today, and every encounter has left an imprint on my creative soul. Let me take you on a journey through my experiences, all while building my brand name, AstusX. From the outset, AstusX was more than just a brand—it was a vision. It represented my commitment to pushing the boundaries of design, to infusing creativity into every aspect of my work, and to making a meaningful impact on the world around me. But building a brand from the ground up is no easy feat; it requires dedication, perseverance, and a willingness to embrace the unknown. No journey is complete without the people you meet along the way. I had the privilege of collaborating with talented individuals from all walks of life, each bringing their own unique perspective and expertise to the table. Together, we created designs that captured the imagination and resonated with audiences around the world. From fellow designers to clients who entrusted me with their vision, each person I met left an indelible mark on my journey."
+        }
+      ]
+    },
+    {
+      "heading": "About Astusx",
+      "body": [
+        {
+          "p": "AstusX operates as a premier design agency catering specifically to startups, dedicated to crafting unparalleled digital experiences for businesses. Our primary objective is to empower entrepreneurs by relieving them of the burdens associated with digital design, allowing them to devote their energy and resources towards nurturing and expanding their brand presence."
+        },
+        {
+          "p": "With our expertise and innovative approach, we seamlessly integrate design solutions that not only enhance user engagement but also elevate the overall brand identity of our clients. At AstusX, we understand the pivotal role that a compelling digital presence plays in today's competitive landscape, and we are committed to partnering with startups to ensure they stand out amidst the digital noise, enabling them to thrive and succeed in their respective industries."
+        }
+      ]
+    },
+    {
+      "heading": "Selected work",
+      "layout": "gallery",
+      "body": [
+        {
+          "img": "./assets/img/gworks/1.png",
+          "caption": "Wordmark logo"
+        },
+        {
+          "img": "./assets/img/gworks/birdy 1.png",
+          "caption": "Bird Logo"
+        },
+        {
+          "img": "./assets/img/gworks/Gramathupal (2).png",
+          "caption": "Logo Gramathupal"
+        },
+        {
+          "img": "./assets/img/gworks/logo monogram.png",
+          "caption": "Monogram logo"
+        },
+        {
+          "img": "./assets/img/gworks/brcl1.png",
+          "caption": "Branded clothing"
+        },
+        {
+          "img": "./assets/img/gworks/brcl2.png",
+          "caption": "Branded clothing"
+        },
+        {
+          "img": "./assets/img/gworks/brcl3.png",
+          "caption": "Branded clothing"
+        },
+        {
+          "img": "./assets/img/gworks/bc mobile mockup.png",
+          "caption": "Mobile mockup"
+        },
+        {
+          "img": "./assets/img/gworks/bc we are online.png",
+          "caption": "\"We are online\" poster"
+        },
+        {
+          "img": "./assets/img/gworks/Floral Honey.png",
+          "caption": "Product Label Design"
+        },
+        {
+          "img": "./assets/img/gworks/AGRO 4.png",
+          "caption": "Instagram poster"
+        },
+        {
+          "img": "./assets/img/gworks/AGRO 5.png",
+          "caption": "Instagram poster"
+        },
+        {
+          "img": "./assets/img/gworks/AGRO 6.png",
+          "caption": "Instagram poster"
+        },
+        {
+          "img": "./assets/img/poster designs/branded yoga.png",
+          "caption": "Instagram poster"
+        },
+        {
+          "img": "./assets/img/poster designs/Daily services.png",
+          "caption": "Instagram poster"
+        },
+        {
+          "img": "./assets/img/poster designs/EBR.png",
+          "caption": "Instagram poster"
+        },
+        {
+          "img": "./assets/img/poster designs/geekstack easter.png",
+          "caption": "Instagram poster"
+        },
+        {
+          "img": "./assets/img/poster designs/geekstack instagram.png",
+          "caption": "Instagram poster"
+        },
+        {
+          "img": "./assets/img/poster designs/instagram poster  1.png",
+          "caption": "Instagram poster"
+        },
+        {
+          "img": "./assets/img/poster designs/geekstack.png",
+          "caption": "Instagram poster"
+        },
+        {
+          "img": "./assets/img/poster designs/inflation.png",
+          "caption": "Instagram poster"
+        },
+        {
+          "img": "./assets/img/poster designs/instagram poster  2.png",
+          "caption": "Instagram poster"
+        },
+        {
+          "img": "./assets/img/poster designs/instagram poster  16.png",
+          "caption": "Instagram poster"
+        },
+        {
+          "img": "./assets/img/poster designs/green trends.png",
+          "caption": "Instagram poster"
+        },
+        {
+          "img": "./assets/img/poster designs/instagram poster 7.png",
+          "caption": "Instagram poster"
+        },
+        {
+          "img": "./assets/img/poster designs/instagram poster 9.png",
+          "caption": "Instagram poster"
+        },
+        {
+          "img": "./assets/img/poster designs/instagram poster 10.png",
+          "caption": "Instagram poster"
+        },
+        {
+          "img": "./assets/img/poster designs/instagram poster 12.png",
+          "caption": "Instagram poster"
+        },
+        {
+          "img": "./assets/img/poster designs/karleen bio.png",
+          "caption": "Instagram poster"
+        },
+        {
+          "img": "./assets/img/poster designs/munpathivu.png",
+          "caption": "Instagram poster"
+        },
+        {
+          "img": "./assets/img/poster designs/navana.png",
+          "caption": "Instagram poster"
+        }
+      ]
+    }
+  ],
+  "hero": "./assets/img/astusx.webm"
+}

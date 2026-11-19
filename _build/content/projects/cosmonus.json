@@ -1,0 +1,42 @@
+{
+  "title": "Cosmonus",
+  "tagline": "Building real-world intelligence",
+  "meta": [["Type", "Company"], ["Products", "StayOnMap, Happenous"], ["Scope", "Brand, website, studio"], ["Status", "Live"]],
+  "links": [["Visit cosmonus.com", "https://www.cosmonus.com"]],
+  "hero": "./assets/img/cosmonus/primary.png",
+  "sections": [
+    {"heading": "Why Cosmonus exists", "body": [
+      {"p": "Most software understands text. Very little of it understands a street, a home, or a group of people deciding what to do this evening. Cosmonus is the parent company for products, research and systems that understand the physical world: where things are, what they mean, and what to do next."},
+      {"p": "We're a small team building for streets, homes and the people in them, and we start with problems, not technologies. We look at something ordinary, like finding a place to live or deciding what to do tonight, and ask why it still works the way it does. Then we build. Some ideas become products, some become research, some stay experiments, and all of it lives under one roof so that what we learn in one place makes the others better."}
+    ]},
+    {"heading": "What it's made of", "body": [
+      {"pairs": [
+        ["Studio", "The craft behind everything we ship: websites, product interfaces, interactive maps, animation, image generation and video."],
+        ["Products", "StayOnMap and Happenous, both built on knowing where you are."],
+        ["Intelligence", "Spatial intelligence, and Trust Score: a readable signal for how far a listing, place or claim can be relied on."],
+        ["Agents", "Systems that take in a signal, gather context, choose tools, and return a result a person can check."],
+        ["Research", "What we're learning, published as we go."]
+      ]},
+      {"gallery": [
+        {"img": "./assets/img/cosmonus/product.jpg", "caption": "Products that start from the real world."},
+        {"img": "./assets/img/cosmonus/agents.jpg", "caption": "From understanding to action."}
+      ]}
+    ]},
+    {"heading": "Designing the brand and the site", "body": [
+      {"p": "The identity is deliberately quiet: a bold geometric wordmark, a near-black and grey palette, and real photography and film of the physical world instead of stock imagery, because the subject is the world outside the screen."},
+      {"p": "Colour is rationed. Cosmonus violet appears as small 8px marker dots and almost nowhere else, so when it shows up it means \"you are here\". Every inner page opens on a film or a still, with the title anchored bottom-left on a soft shade."},
+      {"swatches": [["Ink", "#0F0F0F"], ["Ink 2", "#2B2B29"], ["Muted", "#5C5C58"], ["Line", "#E4E4E1"], ["Cosmonus violet", "#635BFF"]]},
+      {"sub": "One grid for every section"},
+      {"p": "Every section sits on the same structure: thirds with a 20px gap, headings in the first third and content across the other two, and sets of four laid out 2×2 inside the two thirds, so each card is exactly one third wide. The result is that the logo, banner edges, headings, card rows and footer all line up down the page."},
+      {"img": "./assets/img/cosmonus/about-1.jpg", "caption": ""}
+    ]},
+    {"heading": "Built in our own studio", "body": [
+      {"p": "The website is built in-house with Next.js, TypeScript, Tailwind and Framer Motion. All page copy lives in typed content files, separate from the components, so the words can change without touching the layout. Motion is calm and purposeful: slow-drifting colour fields that pause when off screen, and nothing that ignores reduced motion."},
+      {"gallery": [
+        {"img": "./assets/img/cosmonus/about-2.jpg", "caption": ""},
+        {"img": "./assets/img/cosmonus/about-3.jpg", "caption": ""}
+      ]},
+      {"img": "./assets/img/cosmonus/studio.jpg", "caption": ""}
+    ]}
+  ]
+}
