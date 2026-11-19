@@ -116,15 +116,45 @@ ICON = {
 
 
 # ---------------------------------------------------------------- layout
-NAV = [("Work", "work.html"), ("About", "aboutme.html"), ("Writing", "blog.html")]
+NAV = [("Work", "work.html"), ("Services", "services.html"), ("About", "aboutme.html"), ("Writing", "blog.html")]
+CONTACT = "./contact.html"
+PAGES: list[str] = []  # every indexable page written, for sitemap.xml
 
 
-def layout(title: str, description: str, body: str, current: str = "", image: str = "", whatsapp: bool = False) -> str:
-    full = title if title == SITE["name"] else f"{title} · {SITE['name']}"
+def canonical(name: str) -> str:
+    """Netlify serves /work for work.html, so the canonical URL drops the extension."""
+    return f"{ORIGIN}/" if name == "index.html" else f"{ORIGIN}/{quote(name.removesuffix('.html'))}"
+
+
+def person_ld() -> dict:
+    return {
+        "@type": "Person", "@id": f"{ORIGIN}/#person", "name": SITE["name"], "url": f"{ORIGIN}/",
+        "jobTitle": SITE["role"], "email": f"mailto:{SITE['email']}",
+        "image": f"{ORIGIN}/{url(SITE['about']['photo'].lstrip('./'))}",
+        "address": {"@type": "PostalAddress", "addressCountry": "IN"},
+        "worksFor": {"@type": "Organization", "name": "Cosmonus", "url": "https://www.cosmonus.com"},
+        "knowsAbout": ["Product design", "UI/UX design", "Design systems", "Frontend development", "React", "Next.js", "Brand identity"],
+        "sameAs": [u for _, u in SITE["social"]],
+    }
+
+
+def layout(title: str, description: str, body: str, current: str = "", image: str = "", whatsapp: bool = True,
+           name: str = "", full_title: str = "", jsonld: list | None = None, index: bool = True) -> str:
+    full = full_title or (title if title == SITE["name"] else f"{title} · {SITE['name']}")
     og_img = f'\n  <meta property="og:image" content="{ORIGIN}/{e(url(image.lstrip("./")))}">' if image else ""
+    head_extra = ""
+    if name:
+        head_extra += f'\n  <link rel="canonical" href="{canonical(name)}">\n  <meta property="og:url" content="{canonical(name)}">'
+        if index:
+            PAGES.append(name)
+    if not index:
+        head_extra += '\n  <meta name="robots" content="noindex">'
+    if jsonld:
+        graph = json.dumps({"@context": "https://schema.org", "@graph": jsonld}, ensure_ascii=False).replace("</", "<\\/")
+        head_extra += f'\n  <script type="application/ld+json">{graph}</script>'
     nav = "".join(
-        f'<a href="{href}"{" aria-current=\"page\"" if href == current else ""}>{label}</a>' for label, href in NAV
-    )
+        f'<a href="./{href}"{" aria-current=\"page\"" if href == current else ""}>{label}</a>' for label, href in NAV
+    ) + f'<a class="nav-cta" href="{CONTACT}"{" aria-current=\"page\"" if current == "contact.html" else ""}>Start a project</a>'
     email = SITE["email"]
     socials = "".join(f'<li><a href="{u}" rel="me noopener" target="_blank">{n}</a></li>' for n, u in SITE["social"])
     return f"""<!doctype html>
@@ -140,7 +170,8 @@ def layout(title: str, description: str, body: str, current: str = "", image: st
   <meta property="og:type" content="website">
   <meta property="og:title" content="{e(full)}">
   <meta property="og:description" content="{e(description)}">{og_img}
-  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:site_name" content="{e(SITE['name'])}">
+  <meta name="twitter:card" content="summary_large_image">{head_extra}
   <link rel="icon" href="./assets/img/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -158,6 +189,7 @@ def layout(title: str, description: str, body: str, current: str = "", image: st
       <a class="wordmark" href="./index.html" aria-label="{e(SITE['name'])}, home"><span class="dot" aria-hidden="true"></span>{e(SITE['name'])}</a>
       <nav class="nav" id="nav" aria-label="Main">{nav}</nav>
       <div class="header-actions">
+        <a class="btn btn--sm header-cta" href="{CONTACT}">Start a project</a>
         <button class="icon-btn theme-toggle" type="button" aria-label="Switch light or dark theme">{ICON['sun']}{ICON['moon']}</button>
         <button class="icon-btn menu-btn" type="button" aria-label="Menu" aria-controls="nav" aria-expanded="false">{ICON['menu']}</button>
       </div>
@@ -170,8 +202,8 @@ def layout(title: str, description: str, body: str, current: str = "", image: st
     <div class="wrap">
       <div class="footer-grid">
         <div>
-          <p class="footer-big">Have an interesting, stupid or crazy idea you'd like some help building?</p>
-          <a class="btn" href="mailto:{email}">Let's talk {ARROW}</a>
+          <p class="footer-big">Have a product, website or idea you'd like help building?</p>
+          <div class="btns"><a class="btn" href="{CONTACT}">Start a project {ARROW}</a><a class="btn btn--ghost" href="{wa_link()}" target="_blank" rel="noopener">WhatsApp me</a></div>
         </div>
         <div>
           <h3>Pages</h3>
@@ -179,10 +211,10 @@ def layout(title: str, description: str, body: str, current: str = "", image: st
         </div>
         <div>
           <h3>Elsewhere</h3>
-          <ul>{socials}<li><a href="mailto:{email}">Email</a></li></ul>
+          <ul>{socials}<li><a href="mailto:{email}">{e(email)}</a></li></ul>
         </div>
       </div>
-      <div class="footer-base"><span>© <span data-year>{date.today().year}</span> {e(SITE['name'])}</span><span>Built with ❤️ from India.</span></div>
+      <div class="footer-base"><span>© <span data-year>{date.today().year}</span> {e(SITE['name'])}</span><span>Based in India · Working with clients worldwide</span></div>
     </div>
   </footer>
   <dialog class="lightbox" aria-label="Image preview">
@@ -199,9 +231,13 @@ def layout(title: str, description: str, body: str, current: str = "", image: st
 WHATSAPP_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51l-.57-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.05 21.5h-.01a9.43 9.43 0 0 1-4.8-1.31l-.35-.2-3.57.93.95-3.48-.22-.36a9.4 9.4 0 0 1-1.45-5.02c0-5.2 4.24-9.43 9.45-9.43 2.52 0 4.89.98 6.67 2.77a9.37 9.37 0 0 1 2.76 6.67c0 5.2-4.24 9.43-9.43 9.43zm8.03-17.46A11.27 11.27 0 0 0 12.05.72C5.78.72.68 5.82.67 12.08c0 2 .52 3.96 1.52 5.68L.57 23.65l6.03-1.58a11.33 11.33 0 0 0 5.44 1.39h.01c6.26 0 11.36-5.1 11.37-11.36 0-3.04-1.18-5.89-3.33-8.04z"/></svg>'
 
 
-def wa_button() -> str:
+def wa_link(text: str = "Hi Gokul, I'd like to talk about a project.") -> str:
     number = re.sub(r"\D", "", SITE["phone"])
-    return (f'<a class="wa-fab" href="https://wa.me/{number}" target="_blank" rel="noopener" '
+    return f"https://wa.me/{number}?text={quote(text)}"
+
+
+def wa_button() -> str:
+    return (f'<a class="wa-fab" href="{e(wa_link())}" target="_blank" rel="noopener" '
             f'aria-label="Message me on WhatsApp">{WHATSAPP_SVG}<span>Message me</span></a>')
 
 
@@ -233,8 +269,8 @@ def card(p: dict, feature: bool = False, filterable: bool = False) -> str:
 def quotes_block() -> str:
     items = "".join(
         f"""<figure class="quote"><blockquote>{e(q)}</blockquote>
-<figcaption>{img(a, n, width=120)}<div><strong>{e(n)}</strong><span>{e(r)}</span></div></figcaption></figure>"""
-        for q, n, r, a in SITE["testimonials"]
+<figcaption>{img(a, n, width=120)}<div><strong>{e(n)}</strong><span>{e(r)}</span>{f'<span class="quote-project">{e(rest[0])}</span>' if rest and rest[0] else ''}</div></figcaption></figure>"""
+        for q, n, r, a, *rest in SITE["testimonials"]
     )
     return f"""<section class="section" aria-labelledby="kind-words">
   <div class="wrap">
@@ -265,18 +301,10 @@ def post_rows(posts) -> str:
 </a>""" for p in posts) + "</div>"
 
 
-def cta() -> str:
-    return f"""<section class="section"><div class="wrap"><div class="cta reveal">
-  <span class="kicker" style="color:inherit;opacity:.7"><span class="dot"></span>Let's work together</span>
-  <h2>Have an interesting, stupid or crazy idea you'd like some help building?</h2>
-  <div class="btns"><a class="btn" href="mailto:{SITE['email']}">{e(SITE['email'])} {ARROW}</a><a class="btn btn--ghost" href="./aboutme.html">More about me</a></div>
-</div></div></section>"""
-
-
 # ---------------------------------------------------------------- content blocks
 def figure(src: str, caption: str = "", alt: str = "") -> str:
     cap = f"<figcaption>{e(caption)}</figcaption>" if caption else ""
-    return f'<figure class="figure"><button class="frame" type="button" data-zoom="{e(url(src))}" aria-label="Enlarge image">{img(src, alt or caption, width=1600)}</button>{cap}</figure>'
+    return f'<figure class="figure"><button class="frame" type="button" data-zoom="{e(url(thumb(src, 2400)))}" aria-label="Enlarge image">{img(src, alt or caption, width=1600)}</button>{cap}</figure>'
 
 
 def blocks(body: list, layout_hint: str = "") -> str:
@@ -336,141 +364,274 @@ def experiment(exp) -> str:
     return f'<div class="experiment reveal">{inner}</div>'
 
 
+def cta(title: str = "Have a product, website or idea you'd like help building?") -> str:
+    return f"""<section class="section"><div class="wrap"><div class="cta reveal">
+  <span class="kicker" style="color:inherit;opacity:.7"><span class="dot"></span>Let's work together</span>
+  <h2>{e(title)}</h2>
+  <p class="cta-lead">Tell me what you're building. I'll come back with questions, a plan and a clear next step.</p>
+  <div class="btns"><a class="btn" href="{CONTACT}">Start a project {ARROW}</a><a class="btn btn--ghost" href="{e(wa_link())}" target="_blank" rel="noopener">Message me on WhatsApp</a></div>
+</div></div></section>"""
+
+
+def head(kicker: str, title: str, hid: str, link: str = "") -> str:
+    return (f'<div class="section-head reveal"><div><span class="kicker"><span class="dot"></span>{e(kicker)}</span>'
+            f'<h2 id="{hid}" style="margin-top:14px">{title}</h2></div>{link}</div>')
+
+
+def process_tiles() -> str:
+    return '<ol class="tiles tiles--steps">' + "".join(
+        f'<li class="tile reveal"><span class="num">0{i}</span><h3>{e(n)}</h3><p>{e(d)}</p></li>'
+        for i, (n, d) in enumerate(SITE["process"], 1)) + "</ol>"
+
+
+def service_summaries() -> str:
+    return '<div class="tiles">' + "".join(
+        f'<a class="tile tile--link reveal" href="./services.html#{s["slug"]}"><span class="num">0{i}</span><h3>{e(s["name"])}</h3>'
+        f'<p>{e(s["for"])}</p><span class="tile-more">What\'s included {ARROW}</span></a>'
+        for i, s in enumerate(SITE["services"], 1)) + "</div>"
+
+
+def stack_rows() -> str:
+    return '<div class="rows">' + "".join(
+        f'<div class="row reveal"><span class="row-name">{e(n)}</span><p class="row-text">{e(d)}</p><span></span></div>'
+        for n, d in SITE["stack"]) + "</div>"
+
+
 # ---------------------------------------------------------------- pages
 def build_index() -> None:
     h = SITE["hero"]
-    featured = [p for p in PROJECTS if p.get("slug") in ("stayonmap", "happenous")]
-    rest = [p for p in PROJECTS if p not in featured][:6]
-    title = e(h["title"]).replace("trust", '<span class="serif">trust</span>')
+    selected = [p for p in PROJECTS if p.get("slug") in ("stayonmap", "happenous", "fluidwork", "cosmonus")]
+    title = e(h["title"]).replace(e(h["serif"]), f'<span class="serif">{e(h["serif"])}</span>')
     logos = "".join(img(src, name) for name, src in SITE["clients"])
-    services = "".join(
-        f'<div class="tile reveal"><span class="num">0{i}</span><h3>{e(n)}</h3><p>{e(d)}</p></div>'
-        for i, (n, d) in enumerate(SITE["services"], 1))
-    exp = SITE["experiments"][0]
+    a = SITE["about"]
     body = f"""<section class="hero"><div class="wrap hero-grid">
   <div>
     <span class="kicker reveal"><span class="dot"></span>{e(h['kicker'])}</span>
     <h1 class="reveal">{title}</h1>
     <p class="lead reveal">{e(h['lead'])}</p>
-    <div class="btns reveal"><a class="btn" href="./work.html">See my work {ARROW}</a><a class="btn btn--ghost" href="mailto:{SITE['email']}">Get in touch</a></div>
+    <div class="btns reveal"><a class="btn" href="./work.html">Explore my work {ARROW}</a><a class="btn btn--ghost" href="{CONTACT}">Start a project</a></div>
+    <p class="availability reveal"><span class="pulse" aria-hidden="true"></span>{e(h['availability'])}</p>
   </div>
-  {img(SITE['about']['photo'], SITE['name'], 'hero-photo reveal', eager=True, width=600)}
+  {img(a['photo'], SITE['name'], 'hero-photo reveal', eager=True, width=600)}
 </div></section>
 <section class="logos" aria-label="Companies I've worked with"><div class="wrap"><span>Companies I've worked with</span>{logos}</div></section>
 
 <section class="section" id="work" aria-labelledby="selected-work">
   <div class="wrap">
-    <div class="section-head reveal"><div><span class="kicker"><span class="dot"></span>Selected work</span><h2 id="selected-work" style="margin-top:14px">Products I'm building right now</h2></div>
-    <a class="btn btn--ghost" href="./work.html">All projects {ARROW}</a></div>
-    <div class="grid grid--2">{''.join(card(p, feature=True) for p in featured)}</div>
-  </div>
-</section>
-<section class="section" aria-labelledby="more-work">
-  <div class="wrap">
-    <div class="section-head reveal"><h2 id="more-work">Brand, web and case studies</h2></div>
-    <div class="grid grid--3">{''.join(card(p) for p in rest)}</div>
+    {head("Selected work", "Products I've shipped and brands I've built", "selected-work", f'<a class="btn btn--ghost" href="./work.html">All projects {ARROW}</a>')}
+    <p class="lead section-lead reveal">{e(h['proof'])}</p>
+    <div class="grid grid--2">{''.join(card(p, feature=True) for p in selected)}</div>
   </div>
 </section>
 
 <section class="section" aria-labelledby="what-i-do">
   <div class="wrap">
-    <div class="section-head reveal"><div><span class="kicker"><span class="dot"></span>What I do</span><h2 id="what-i-do" style="margin-top:14px">From the first sketch to the shipped app</h2></div></div>
-    <div class="tiles">{services}</div>
+    {head("Services", "How I can help", "what-i-do", f'<a class="btn btn--ghost" href="./services.html">All services {ARROW}</a>')}
+    {service_summaries()}
+  </div>
+</section>
+
+<section class="section" aria-labelledby="how-i-work">
+  <div class="wrap">
+    {head("How I work", "Simple, direct and transparent", "how-i-work")}
+    {process_tiles()}
   </div>
 </section>
 
 <section class="section" aria-labelledby="experience">
   <div class="wrap">
-    <div class="section-head reveal"><div><span class="kicker"><span class="dot"></span>Experience</span><h2 id="experience" style="margin-top:14px">Where I've been building</h2></div></div>
+    {head("Experience", "Where I've been building", "experience")}
     {experience_rows()}
   </div>
 </section>
 
 {quotes_block()}
 
-<section class="section" aria-labelledby="experiments">
-  <div class="wrap">
-    {experiment(exp)}
-  </div>
-</section>
-
-<section class="section" aria-labelledby="writing">
-  <div class="wrap">
-    <div class="section-head reveal"><div><span class="kicker"><span class="dot"></span>Writing</span><h2 id="writing" style="margin-top:14px">Notes on design</h2></div>
-    <a class="btn btn--ghost" href="./blog.html">All writing {ARROW}</a></div>
-    {post_rows(POSTS[:3])}
+<section class="section" aria-labelledby="about-me">
+  <div class="wrap about-teaser">
+    <div class="about-teaser-photo reveal">{img(a['photo'], SITE['name'], width=600)}</div>
+    <div class="reveal">
+      <span class="kicker"><span class="dot"></span>About</span>
+      <h2 id="about-me" style="margin:14px 0 20px">Designer and builder, working with you directly.</h2>
+      <div class="prose"><p>{e(a['intro'][0])}</p><p>{e(a['intro'][1])}</p></div>
+      <div class="btns" style="margin-top:28px"><a class="btn btn--ghost" href="./aboutme.html">More about me {ARROW}</a></div>
+    </div>
   </div>
 </section>
 {cta()}"""
-    write("index.html", layout(SITE["name"], f"{SITE['name']} is a product designer in India, building StayOnMap and Happenous, and designing brands, websites and apps people can trust.", body, "", "./assets/img/stayonmap/card-map.jpg", whatsapp=True))
+    desc = (f"{SITE['name']} is a product designer and frontend developer helping startups and businesses worldwide "
+            "design and build web apps, websites, MVPs and brands.")
+    write("index.html", layout(SITE["name"], desc, body, "", "./assets/img/stayonmap/card-map.jpg", name="index.html",
+                               full_title=f"{SITE['name']} · Product Designer & Frontend Developer",
+                               jsonld=[person_ld(), {"@type": "WebSite", "@id": f"{ORIGIN}/#website", "url": f"{ORIGIN}/", "name": SITE["name"], "publisher": {"@id": f"{ORIGIN}/#person"}},
+                                       {"@type": "ProfessionalService", "@id": f"{ORIGIN}/#service", "name": f"{SITE['name']}: product design and development",
+                                        "url": f"{ORIGIN}/", "founder": {"@id": f"{ORIGIN}/#person"}, "areaServed": "Worldwide", "email": SITE["email"],
+                                        "image": f"{ORIGIN}/assets/img/stayonmap/card-map.jpg",
+                                        "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": s["name"], "description": s["for"]}} for s in SITE["services"]]}]))
+
+
+GROUPS = [
+    ("products", "My products", "Designed and built end to end, and live today."),
+    ("client", "Client work", "Brand, web and product work for companies and founders."),
+    ("exercise", "Case studies & design exercises", "Timed design sprints and self-initiated case studies that show how I think."),
+]
 
 
 def build_work() -> None:
-    tags = []
-    for p in PROJECTS:
-        for t in p["tags"]:
-            if t not in tags:
-                tags.append(t)
-    chips = '<button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>' + "".join(
-        f'<button class="chip" type="button" data-filter="{e(t)}" aria-pressed="false">{e(t)}</button>' for t in tags)
+    sections = []
+    for key, label, lead in GROUPS:
+        items = [p for p in PROJECTS if p.get("group") == key]
+        sections.append(f"""<section class="section work-group" aria-labelledby="g-{key}"><div class="wrap">
+  <div class="section-head reveal"><div><h2 id="g-{key}">{e(label)}</h2><p class="muted" style="margin:12px 0 0">{e(lead)}</p></div></div>
+  <div class="grid grid--2">{''.join(card(p, feature=key != 'exercise') for p in items)}</div>
+</div></section>""")
     body = f"""<section class="hero"><div class="wrap">
   <span class="kicker reveal"><span class="dot"></span>Work</span>
-  <h1 class="reveal">Products, brands and <span class="serif">case studies</span>.</h1>
-  <p class="lead reveal">Check out some of my projects with creative ideas and great design: two live products, brand and web work for clients, and design sprints that show how I think.</p>
+  <h1 class="reveal">Products, brands and <span class="serif">websites</span>.</h1>
+  <p class="lead reveal">Two products I designed and built myself, brand and web work for clients, and design exercises that show how I approach a problem.</p>
 </div></section>
-<section class="section" style="padding-top:0"><div class="wrap">
-  <div class="filters" role="group" aria-label="Filter projects">{chips}</div>
-  <div class="grid grid--2">{''.join(card(p, filterable=True) for p in PROJECTS)}</div>
+{''.join(sections)}
+{cta()}"""
+    write("work.html", layout("Work", "Selected work by Sri Gokul Krishnan: the StayOnMap and Happenous products, brand and web work for clients like Fluid.Work, and UX case studies.", body, "work.html", "./assets/img/stayonmap/card-map.jpg", name="work.html"))
+
+
+def build_services() -> None:
+    blocks_ = []
+    for i, s in enumerate(SITE["services"], 1):
+        inc = "".join(f"<li>{e(x)}</li>" for x in s["includes"])
+        blocks_.append(f"""<article class="service reveal" id="{s['slug']}" aria-labelledby="s-{s['slug']}">
+  <div class="service-head"><span class="num">0{i}</span><h2 id="s-{s['slug']}">{e(s['name'])}</h2></div>
+  <dl class="service-body">
+    <div><dt>Who it's for</dt><dd>{e(s['for'])}</dd></div>
+    <div><dt>The problem it solves</dt><dd>{e(s['problem'])}</dd></div>
+    <div><dt>What's included</dt><dd><ul>{inc}</ul></dd></div>
+    <div><dt>What you receive</dt><dd>{e(s['receive'])}</dd></div>
+    <div><dt>See it in</dt><dd>{e(s['proof'])}</dd></div>
+  </dl>
+  <a class="btn btn--ghost" href="{CONTACT}?type={quote(s['name'])}">Start a project like this {ARROW}</a>
+</article>""")
+    body = f"""<section class="hero"><div class="wrap">
+  <span class="kicker reveal"><span class="dot"></span>Services</span>
+  <h1 class="reveal">From idea to <span class="serif">shipped</span> product.</h1>
+  <p class="lead reveal">Four ways I work with founders and businesses. Each one can stand alone, and they work best together: the same person designs it and builds it, so nothing gets lost in a handover.</p>
+  <div class="btns reveal"><a class="btn" href="{CONTACT}">Start a project {ARROW}</a></div>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap services">{''.join(blocks_)}</div></section>
+<section class="section" aria-labelledby="how-i-work"><div class="wrap">
+  {head("How I work", "Simple, direct and transparent", "how-i-work")}
+  {process_tiles()}
+</div></section>
+<section class="section" aria-labelledby="stack"><div class="wrap">
+  {head("Tools", "What I design and build with", "stack")}
+  {stack_rows()}
 </div></section>
 {cta()}"""
-    write("work.html", layout("Work", "Selected projects by Sri Gokul Krishnan: StayOnMap, Happenous, Cosmonus, brand identities, websites and UX case studies.", body, "work.html", "./assets/img/stayonmap/card-map.jpg"))
+    write("services.html", layout("Services", "Product design and UI/UX, website design and development, MVP design and development, and branding, by Sri Gokul Krishnan for startups and businesses worldwide.", body, "services.html", "./assets/img/happenous/card-activities.jpg", name="services.html",
+                                  jsonld=[person_ld()] + [{"@type": "Service", "name": s["name"], "description": f"{s['for']} {s['receive']}", "provider": {"@id": f"{ORIGIN}/#person"}, "areaServed": "Worldwide"} for s in SITE["services"]]))
+
+
+PROJECT_TYPES = [s["name"] for s in SITE["services"]] + ["Not sure yet"]
+TIMELINES = ["As soon as possible", "Within a month", "In 1–3 months", "Just exploring"]
+
+
+def build_contact() -> None:
+    types = "".join(f'<option value="{e(t)}">{e(t)}</option>' for t in PROJECT_TYPES)
+    times = "".join(f'<option value="{e(t)}">{e(t)}</option>' for t in TIMELINES)
+    body = f"""<section class="hero"><div class="wrap">
+  <span class="kicker reveal"><span class="dot"></span>Start a project</span>
+  <h1 class="reveal">Let's talk about <span class="serif">your project</span>.</h1>
+  <p class="lead reveal">Tell me what you're building. The quickest way to reach me is WhatsApp. If you'd rather write it out, use the form and I'll reply by email.</p>
+</div></section>
+<section class="section" style="padding-top:0"><div class="wrap contact-grid">
+  <form class="form reveal" name="project" method="POST" action="/thanks" data-netlify="true" netlify-honeypot="company-website">
+    <input type="hidden" name="form-name" value="project">
+    <p class="hp"><label>Leave this empty <input name="company-website" tabindex="-1" autocomplete="off"></label></p>
+    <div class="field-row">
+      <label class="field"><span>Name <em>*</em></span><input name="name" autocomplete="name" required></label>
+      <label class="field"><span>Email <em>*</em></span><input type="email" name="email" autocomplete="email" required></label>
+    </div>
+    <label class="field"><span>Company <small>optional</small></span><input name="company" autocomplete="organization"></label>
+    <div class="field-row">
+      <label class="field"><span>Project type</span><select name="project-type" id="project-type">{types}</select></label>
+      <label class="field"><span>Timeline</span><select name="timeline">{times}</select></label>
+    </div>
+    <label class="field"><span>About the project <em>*</em></span><textarea name="description" rows="6" required placeholder="What are you building, who is it for, and what would a great result look like?"></textarea></label>
+    <button class="btn" type="submit">Send project details {ARROW}</button>
+    <p class="form-note">Fields marked * are required. Your details are only used to reply to you.</p>
+  </form>
+  <aside class="contact-side reveal" aria-label="Other ways to reach me">
+    <a class="wa-card" href="{e(wa_link())}" target="_blank" rel="noopener">{WHATSAPP_SVG}<span><strong>Message me on WhatsApp</strong><small>The fastest way to start a conversation</small></span></a>
+    <p class="muted" style="margin:20px 0 4px">Or email</p>
+    <p><a href="mailto:{SITE['email']}">{e(SITE['email'])}</a></p>
+    <h2 class="side-title">What happens next</h2>
+    <ol class="next-steps">
+      <li><strong>I read your message</strong><span>and reply personally, with any questions I have.</span></li>
+      <li><strong>We talk it through</strong><span>on a call or in messages, whichever suits you.</span></li>
+      <li><strong>You get a plan</strong><span>with scope, timeline and price, before any work starts.</span></li>
+    </ol>
+  </aside>
+</div></section>
+<script>
+  (function () {{
+    var t = new URLSearchParams(location.search).get('type'), s = document.getElementById('project-type');
+    if (t && s) for (var i = 0; i < s.options.length; i++) if (s.options[i].value === t) s.selectedIndex = i;
+  }})();
+</script>"""
+    write("contact.html", layout("Start a project", "Start a project with Sri Gokul Krishnan: product design, websites, MVPs and branding. Send the project form or message on WhatsApp.", body, "contact.html", name="contact.html", whatsapp=False))
+
+
+def build_thanks() -> None:
+    body = f"""<section class="wrap notfound">
+  <span class="kicker" style="justify-content:center"><span class="dot"></span>Message sent</span>
+  <h1 style="font-size:clamp(48px,8vw,96px)">Thank <span class="serif">you</span>.</h1>
+  <p class="lead" style="margin-inline:auto">Your project details have reached me. I'll read them and reply by email with any questions and the next step. If it's urgent, message me on WhatsApp.</p>
+  <div class="btns" style="justify-content:center"><a class="btn" href="{e(wa_link())}" target="_blank" rel="noopener">WhatsApp me</a><a class="btn btn--ghost" href="./work.html">Look at more work</a></div>
+</section>"""
+    write("thanks.html", layout("Thank you", "Your project details were sent.", body, name="thanks.html", index=False, whatsapp=False))
 
 
 def build_about() -> None:
     a = SITE["about"]
-    process = "".join(
-        f'<div class="tile reveal"><span class="num">0{i}</span><h3>{e(n)}</h3><p>{e(d)}</p></div>'
-        for i, (n, d) in enumerate(SITE["process"], 1))
-    services = "".join(
-        f'<div class="row reveal"><span class="row-name">{e(n)}</span><p class="row-text">{e(d)}</p><span></span></div>'
-        for n, d in SITE["services"])
     socials = "".join(f'<li><a href="{u}" rel="me noopener" target="_blank">{n}</a></li>' for n, u in SITE["social"])
+    exp = SITE["experiments"][0]
     body = f"""<section class="hero"><div class="wrap">
   <span class="kicker reveal"><span class="dot"></span>About</span>
-  <h1 class="reveal">A little bit <span class="serif">about myself</span>.</h1>
+  <h1 class="reveal">Designer, developer and <span class="serif">founder</span>.</h1>
 </div></section>
 <section class="section" style="padding-top:0"><div class="wrap about-grid">
   <div class="prose reveal">{''.join(f'<p>{e(p)}</p>' for p in a['intro'])}
-    <h3>Get in touch</h3>
-    <p>If you want to work with me, feel free to reach out at <a href="mailto:{SITE['email']}">{e(SITE['email'])}</a>.</p>
-    <ul class="contact-list"><li><a href="mailto:{SITE['email']}">{e(SITE['email'])}</a></li><li><a href="tel:{SITE['phone'].replace(' ', '')}">{e(SITE['phone'])}</a></li>{socials}</ul>
+    <h3>Work with me</h3>
+    <p>I work directly with founders and businesses worldwide. <a href="{CONTACT}">Tell me about your project</a>, or message me on <a href="{e(wa_link())}" target="_blank" rel="noopener">WhatsApp</a>.</p>
+    <ul class="contact-list"><li><a href="mailto:{SITE['email']}">{e(SITE['email'])}</a></li>{socials}</ul>
   </div>
   <div class="about-photo reveal">{img(a['photo'], SITE['name'], eager=True, width=900)}</div>
 </div></section>
 
-<section class="section" aria-labelledby="process">
+<section class="section" aria-labelledby="how-i-work">
   <div class="wrap">
-    <div class="section-head reveal"><div><span class="kicker"><span class="dot"></span>My design process</span><h2 id="process" style="margin-top:14px">A user-centred dance between understanding and invention</h2></div></div>
-    <div class="tiles">{process}</div>
+    {head("How I work", "Simple, direct and transparent", "how-i-work")}
+    {process_tiles()}
   </div>
 </section>
 
-<section class="section" aria-labelledby="services">
+<section class="section" aria-labelledby="stack">
   <div class="wrap">
-    <div class="section-head reveal"><div><span class="kicker"><span class="dot"></span>What I do</span><h2 id="services" style="margin-top:14px">Services</h2></div></div>
-    <div class="rows">{services}</div>
+    {head("Tools", "What I design and build with", "stack", f'<a class="btn btn--ghost" href="./services.html">Services {ARROW}</a>')}
+    {stack_rows()}
   </div>
 </section>
 
 <section class="section" aria-labelledby="experience">
   <div class="wrap">
-    <div class="section-head reveal"><div><span class="kicker"><span class="dot"></span>Experience</span><h2 id="experience" style="margin-top:14px">Where I've been building</h2></div></div>
+    {head("Experience", "Where I've been building", "experience")}
     {experience_rows()}
   </div>
 </section>
 {quotes_block()}
+<section class="section" aria-labelledby="experiments"><div class="wrap">{experiment(exp)}</div></section>
 {cta()}"""
-    write("aboutme.html", layout("About", f"About {SITE['name']}: product designer, builder of StayOnMap and Happenous, and founder of the AstusX design studio.", body, "aboutme.html", a["photo"]))
+    write("aboutme.html", layout("About", f"About {SITE['name']}: product designer and frontend developer, founder of Cosmonus (StayOnMap, Happenous) and previously the AstusX design studio.", body, "aboutme.html", a["photo"], name="aboutme.html",
+                                 jsonld=[person_ld(), {"@type": "ProfilePage", "url": canonical("aboutme.html"), "mainEntity": {"@id": f"{ORIGIN}/#person"}}]))
 
 
 def build_project(i: int, p: dict) -> None:
@@ -504,8 +665,12 @@ def build_project(i: int, p: dict) -> None:
 <div class="wrap"><div class="case-cover reveal">{cover}</div></div>
 <div class="wrap">{''.join(sections)}</div>
 </article>
-<div class="wrap"><a class="next-project reveal" href="./{nxt['slug']}.html"><span class="kicker"><span class="dot"></span>Next project</span><span class="big">{e(nxt['title'])} →</span></a></div>"""
-    write(f"{p['slug']}.html", layout(p["title"], f"{p['title']}: {p['summary']}", body, "work.html", p["card"]))
+<div class="wrap"><a class="next-project reveal" href="./{nxt['slug']}.html"><span class="kicker"><span class="dot"></span>Next project</span><span class="big">{e(nxt['title'])} →</span></a></div>
+{cta("Want something like this for your company?")}"""
+    ld = {"@type": "CreativeWork", "name": d["title"], "headline": d.get("tagline") or p["summary"], "description": p["summary"],
+          "url": canonical(f"{p['slug']}.html"), "image": f"{ORIGIN}/{url(p['card'].lstrip('./'))}", "creator": {"@id": f"{ORIGIN}/#person"}}
+    write(f"{p['slug']}.html", layout(p["title"], f"{p['title']}: {p['summary']}", body, "work.html", p["card"],
+                                      name=f"{p['slug']}.html", jsonld=[person_ld(), ld]))
 
 
 def build_blog() -> None:
@@ -519,7 +684,7 @@ def build_blog() -> None:
   <a class="row reveal" href="https://www.cosmonus.com" target="_blank" rel="noopener"><span class="row-name">More at Cosmonus</span><p class="row-text">Research notes and plain-language explainers from the team behind StayOnMap and Happenous.</p>{ARROW}</a>
 </div></section>
 {cta()}"""
-    write("blog.html", layout("Writing", f"Writing by {SITE['name']} on product design, design systems and building StayOnMap and Happenous.", body, "blog.html", POSTS[0]["cover"]))
+    write("blog.html", layout("Writing", f"Writing by {SITE['name']} on product design, design systems and building StayOnMap and Happenous.", body, "blog.html", POSTS[0]["cover"], name="blog.html"))
 
 
 def build_post(p: dict) -> None:
@@ -540,7 +705,9 @@ def build_post(p: dict) -> None:
 <div class="article prose">{''.join(secs)}<div class="tags" style="margin-top:2.4em">{tags}</div></div></div>
 </article>
 <section class="section"><div class="wrap"><div class="section-head"><h2>Keep reading</h2></div>{post_rows(others)}</div></section>"""
-    write(p["file"], layout(p["title"], p["summary"], body, "blog.html", p["cover"]))
+    ld = {"@type": "BlogPosting", "headline": p["title"], "description": p["summary"], "datePublished": p["date"],
+          "url": canonical(p["file"]), "image": f"{ORIGIN}/{url(p['cover'].lstrip('./'))}", "author": {"@id": f"{ORIGIN}/#person"}}
+    write(p["file"], layout(p["title"], p["summary"], body, "blog.html", p["cover"], name=p["file"], jsonld=[person_ld(), ld]))
 
 
 def build_404() -> None:
@@ -550,22 +717,32 @@ def build_404() -> None:
   <p class="lead" style="margin-inline:auto">Oops! We can't find that page. Why not head back home, or have a look at my work?</p>
   <div class="btns" style="justify-content:center"><a class="btn" href="./index.html">Back home</a><a class="btn btn--ghost" href="./work.html">See my work</a></div>
 </section>"""
-    write("404.html", layout("Page not found", "This page doesn't exist.", body))
+    write("404.html", layout("Page not found", "This page doesn't exist.", body, index=False))
 
 
 def build_redirects() -> None:
     # Old URL with a space in it; keep it working.
     write("traffic monitoring.html", """<!doctype html><html lang="en"><head><meta charset="utf-8">
 <title>Traffic Monitoring</title><meta http-equiv="refresh" content="0; url=./traffic-monitoring.html">
-<link rel="canonical" href="./traffic-monitoring.html"></head>
+<meta name="robots" content="noindex"><link rel="canonical" href="https://www.srigokulkrishnan.com/traffic-monitoring"></head>
 <body><a href="./traffic-monitoring.html">Traffic Monitoring case study</a></body></html>
 """)
+
+
+def build_seo_files() -> None:
+    today = date.today().isoformat()
+    urls = "".join(f"  <url><loc>{canonical(n)}</loc><lastmod>{today}</lastmod></url>\n" for n in PAGES)
+    write("sitemap.xml", f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n')
+    write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {ORIGIN}/sitemap.xml\n")
 
 
 if __name__ == "__main__":
     print("Building site")
     build_index()
     build_work()
+    build_services()
+    build_contact()
+    build_thanks()
     build_about()
     for i, p in enumerate(PROJECTS):
         if p.get("slug"):
@@ -575,6 +752,7 @@ if __name__ == "__main__":
         build_post(p)
     build_404()
     build_redirects()
+    build_seo_files()
     if MISSING:
         print("\nMissing files referenced by content:")
         for m in sorted(set(MISSING)):

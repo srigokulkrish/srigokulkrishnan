@@ -1,49 +1,161 @@
 {
   "title": "StayOnMap",
   "tagline": "Find your home on the map",
-  "meta": [["Type", "Product"], ["Platforms", "Web & Android"], ["Market", "India · seven states"], ["Status", "Live"]],
-  "links": [["Visit stayonmap.com", "https://www.stayonmap.com"], ["Get it on Google Play", "https://play.google.com/store/apps/details?id=com.stayonmap.app"]],
+  "meta": [
+    [
+      "Type",
+      "Product"
+    ],
+    [
+      "Role",
+      "Founder · design and development"
+    ],
+    [
+      "Platforms",
+      "Web & Android"
+    ],
+    [
+      "Market",
+      "India · seven states"
+    ],
+    [
+      "Status",
+      "Live"
+    ]
+  ],
+  "links": [
+    [
+      "Visit stayonmap.com",
+      "https://www.stayonmap.com"
+    ],
+    [
+      "Get it on Google Play",
+      "https://play.google.com/store/apps/details?id=com.stayonmap.app"
+    ]
+  ],
   "hero": "./assets/img/stayonmap/primary.jpg",
   "sections": [
-    {"heading": "The problem", "body": [
-      {"p": "Renting in India still runs through brokers, listing sites full of duplicates, and photos that rarely match the flat. A tenant scrolls through endless lists without knowing where anything really is or whether it can be trusted, and an owner pays a middleman to reach them."},
-      {"p": "StayOnMap is a broker-free rental map, live across seven Indian states, where owners list for free and tenants contact them directly."}
-    ]},
-    {"heading": "The map is the homepage", "body": [
-      {"p": "The single biggest design decision was to make the map the product, not a widget on a listing page. On both web and mobile you don't scroll a feed: you pan to the neighbourhood you care about and the homes there appear as pins. Panels, sheets and cards float over the map instead of replacing it."},
-      {"p": "Everything else follows from that. Business points of interest are styled off the base map so our own pins carry the information that matters. A pin shows its price and which kind of property it is, and tapping it opens a preview with photos, the trust badge, the deposit and what's nearby, all without leaving the map."},
-      {"img": "./assets/img/stayonmap/card-map.jpg", "caption": "Discovery starts from a place, not a list."}
-    ]},
-    {"heading": "Designing for trust", "body": [
-      {"p": "Every listing carries a Trust and Risk score built from reviews, reports and owner verification, so a renter can judge whether a home and its owner are real before they visit. A score is only useful if it shows its reasons, so the UI never shows a bare number: it shows what went into it."},
-      {"p": "The same rule runs through the neighbourhood intelligence on each listing: what's nearby, how you'd get around, and what kind of place it is. Every fact is labelled measured, derived or estimated, and anything we don't know is shown as missing rather than guessed. Distances say \"420 m away\", never an assumed walking time, because across a railway line that 420 m can be a 1.5 km walk."},
-      {"img": "./assets/img/stayonmap/card-trust.jpg", "caption": "Trust signals sit on the listing itself."}
-    ]},
-    {"heading": "Six kinds of property, one flow", "body": [
-      {"p": "StayOnMap lists apartments, houses, land, PGs, shops and short stays. A generic form would be subtly wrong for most of them, so each type is asked the questions that fit it: a plot is never asked about bedrooms, a short stay is booked by the night, and a shop's commute is measured to the city centre rather than an office park."},
-      {"p": "Owners can list through a guided wizard on web or mobile, or simply by chatting with StayOnMap on WhatsApp, answering in their own words, dropping a pin and sending photos. Either way the result is the same ordinary listing, reviewed in the same queue."},
-      {"list": [
-        "One account, two hats: a persistent host mode swaps the whole navigation between renting and hosting.",
-        "Real-time chat with owners, visit booking, and leases offered and signed in the app.",
-        "Saved homes, reviews, and reports that owners can see and respond to."
-      ]},
-      {"gallery": [
-        {"img": "./assets/img/stayonmap/step-1.jpg", "caption": "Search by area, budget, BHK and furnishing."},
-        {"img": "./assets/img/stayonmap/step-2.jpg", "caption": "Visit, meet the owner, no brokerage."}
-      ]}
-    ]},
-    {"heading": "Design system", "body": [
-      {"p": "StayOnMap runs on one design language with two renderers: Tailwind tokens on the web and a matching theme module in the Android app. The palette is Terrain Jade end to end, the wordmark is text only, and the type is Plus Jakarta Sans with JetBrains Mono for prices and IDs."},
-      {"swatches": [["Jade 500", "#12a374"], ["Jade 600", "#0d8a5f"], ["Jade 700", "#0a6e4b"], ["Jade 900", "#053d29"], ["Jade 50", "#edfaf7"]]},
-      {"list": [
-        "WCAG 2.2 AA throughout: 11px type floor, 44px touch targets on the web and 48dp on Android.",
-        "A spacing scale of 4, 8, 12, 16, 20, 24, 32, 40, 48 and 64, and four radii: 8, 12, 16 and 24.",
-        "Every list handles loading, empty and error states. There's never blank space."
-      ]}
-    ]},
-    {"heading": "Under the hood", "body": [
-      {"p": "A React and Vite web app and an Expo (React Native) Android app share one Node.js, Express, Prisma and PostgreSQL backend, with Socket.io for real-time chat and notifications. Neighbourhood facts are computed once per ~150 m map cell rather than per listing, which is what made the intelligence layer affordable to run."},
-      {"img": "./assets/img/stayonmap/visit-band.jpg", "caption": ""}
-    ]}
+    {
+      "heading": "The problem",
+      "body": [
+        {
+          "p": "Renting in India still runs through brokers, listing sites full of duplicates, and photos that rarely match the flat. A tenant scrolls through endless lists without knowing where anything really is or whether it can be trusted, and an owner pays a middleman to reach them."
+        },
+        {
+          "p": "StayOnMap is a broker-free rental map, live across seven Indian states, where owners list for free and tenants contact them directly."
+        }
+      ]
+    },
+    {
+      "heading": "The map is the homepage",
+      "body": [
+        {
+          "p": "The single biggest design decision was to make the map the product, not a widget on a listing page. On both web and mobile you don't scroll a feed: you pan to the neighbourhood you care about and the homes there appear as pins. Panels, sheets and cards float over the map instead of replacing it."
+        },
+        {
+          "p": "Everything else follows from that. Business points of interest are styled off the base map so our own pins carry the information that matters. A pin shows its price and which kind of property it is, and tapping it opens a preview with photos, the trust badge, the deposit and what's nearby, all without leaving the map."
+        },
+        {
+          "img": "./assets/img/stayonmap/card-map.jpg",
+          "caption": "Discovery starts from a place, not a list."
+        }
+      ]
+    },
+    {
+      "heading": "Designing for trust",
+      "body": [
+        {
+          "p": "Every listing carries a Trust and Risk score built from reviews, reports and owner verification, so a renter can judge whether a home and its owner are real before they visit. A score is only useful if it shows its reasons, so the UI never shows a bare number: it shows what went into it."
+        },
+        {
+          "p": "The same rule runs through the neighbourhood intelligence on each listing: what's nearby, how you'd get around, and what kind of place it is. Every fact is labelled measured, derived or estimated, and anything we don't know is shown as missing rather than guessed. Distances say \"420 m away\", never an assumed walking time, because across a railway line that 420 m can be a 1.5 km walk."
+        },
+        {
+          "img": "./assets/img/stayonmap/card-trust.jpg",
+          "caption": "Trust signals sit on the listing itself."
+        }
+      ]
+    },
+    {
+      "heading": "Six kinds of property, one flow",
+      "body": [
+        {
+          "p": "StayOnMap lists apartments, houses, land, PGs, shops and short stays. A generic form would be subtly wrong for most of them, so each type is asked the questions that fit it: a plot is never asked about bedrooms, a short stay is booked by the night, and a shop's commute is measured to the city centre rather than an office park."
+        },
+        {
+          "p": "Owners can list through a guided wizard on web or mobile, or simply by chatting with StayOnMap on WhatsApp, answering in their own words, dropping a pin and sending photos. Either way the result is the same ordinary listing, reviewed in the same queue."
+        },
+        {
+          "list": [
+            "One account, two hats: a persistent host mode swaps the whole navigation between renting and hosting.",
+            "Real-time chat with owners, visit booking, and leases offered and signed in the app.",
+            "Saved homes, reviews, and reports that owners can see and respond to."
+          ]
+        },
+        {
+          "gallery": [
+            {
+              "img": "./assets/img/stayonmap/step-1.jpg",
+              "caption": "Search by area, budget, BHK and furnishing."
+            },
+            {
+              "img": "./assets/img/stayonmap/step-2.jpg",
+              "caption": "Visit, meet the owner, no brokerage."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Design system",
+      "body": [
+        {
+          "p": "StayOnMap runs on one design language with two renderers: Tailwind tokens on the web and a matching theme module in the Android app. The palette is Terrain Jade end to end, the wordmark is text only, and the type is Plus Jakarta Sans with JetBrains Mono for prices and IDs."
+        },
+        {
+          "swatches": [
+            [
+              "Jade 500",
+              "#12a374"
+            ],
+            [
+              "Jade 600",
+              "#0d8a5f"
+            ],
+            [
+              "Jade 700",
+              "#0a6e4b"
+            ],
+            [
+              "Jade 900",
+              "#053d29"
+            ],
+            [
+              "Jade 50",
+              "#edfaf7"
+            ]
+          ]
+        },
+        {
+          "list": [
+            "WCAG 2.2 AA throughout: 11px type floor, 44px touch targets on the web and 48dp on Android.",
+            "A spacing scale of 4, 8, 12, 16, 20, 24, 32, 40, 48 and 64, and four radii: 8, 12, 16 and 24.",
+            "Every list handles loading, empty and error states. There's never blank space."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Under the hood",
+      "body": [
+        {
+          "p": "A React and Vite web app and an Expo (React Native) Android app share one Node.js, Express, Prisma and PostgreSQL backend, with Socket.io for real-time chat and notifications. Neighbourhood facts are computed once per ~150 m map cell rather than per listing, which is what made the intelligence layer affordable to run."
+        },
+        {
+          "img": "./assets/img/stayonmap/visit-band.jpg",
+          "caption": ""
+        }
+      ]
+    }
   ]
 }

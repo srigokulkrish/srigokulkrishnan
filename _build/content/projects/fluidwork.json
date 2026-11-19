@@ -7,23 +7,79 @@
       "Fluidwork Business Solution, UK"
     ],
     [
+      "Role",
+      "Designer, end to end"
+    ],
+    [
       "Scope",
-      "Brand identity, marketing assets, website"
+      "Logo, brand identity, marketing assets, website design"
     ]
   ],
   "links": [],
   "sections": [
     {
-      "heading": "The story",
+      "heading": "The brief",
       "body": [
         {
-          "p": "The opportunity with Fluidwork Business Solution UK has been truly transformative for me. It all began with a recommendation from a dear friend who connected me with Dan Justin, the CEO of Fluidwork. I vividly recall our initial 10-minute conversation, filled with excitement about the prospect of collaborating with Dan."
+          "p": "Fluidwork Business Solution UK offers project and programme management: it helps teams with a shared purpose work together in meetings, projects and everyday team activity."
         },
         {
-          "p": "Our journey together started modestly, with Dan expressing his desire to rebrand the company. He sought a design that seamlessly embodied the essence of Fluidwork, flowing effortlessly like the curve it represents. We began with logo design, exploring various concepts in our pursuit of the perfect fit. Despite encountering challenges along the way, we remained dedicated to our vision."
+          "p": "A friend introduced me to Dan Justin, Fluidwork's CEO. In our first ten-minute call Dan explained what he wanted: to rebrand the company, with an identity that flows the way the name suggests. The work grew from there, from the logo to the whole identity, the marketing assets and the website."
         },
         {
-          "p": "On the second day, our efforts bore fruit as we meticulously refined our designs, resulting in three distinct logo options. Dan sought feedback from the team, and with unanimous enthusiasm, we selected the winning logo. From that moment onward, we embarked on the creation of websites and marketing posters, solidifying Fluidwork's new identity across various platforms."
+          "pairs": [
+            [
+              "Logo",
+              "Mark, wordmark and variations"
+            ],
+            [
+              "Identity",
+              "Colour, type and usage"
+            ],
+            [
+              "Marketing",
+              "Posters and social assets"
+            ],
+            [
+              "Website",
+              "Designed in the new identity"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Exploring the mark",
+      "body": [
+        {
+          "p": "We started with the logo and explored several directions, from flowing, curved forms to a sharper, geometric F. Each was tested in colour, in white on the dark brand navy, and inside a roundel for app and social icons."
+        },
+        {
+          "img": "./assets/img/fluid/fluid 1.png",
+          "caption": "A flowing, curved direction"
+        },
+        {
+          "img": "./assets/img/fluid/fluid 3.png",
+          "caption": "A sharper, geometric F"
+        },
+        {
+          "img": "./assets/img/fluid/fluid 2.png",
+          "caption": ""
+        },
+        {
+          "img": "./assets/img/fluid/fluid 4.png",
+          "caption": ""
+        },
+        {
+          "p": "By the second day the exploration had narrowed to three options. Dan shared them with his team, they chose one unanimously, and that mark became the base for everything that followed."
+        }
+      ]
+    },
+    {
+      "heading": "The identity",
+      "body": [
+        {
+          "p": "The identity takes its cues from minimalism: ideas reduced to their essential parts, with clean shapes, modern type and a small, confident palette."
         },
         {
           "img": "./assets/img/fluid/color 8.png",
@@ -36,7 +92,13 @@
         {
           "img": "./assets/img/fluid/color 10.png",
           "caption": ""
-        },
+        }
+      ]
+    },
+    {
+      "heading": "Marketing assets",
+      "layout": "gallery",
+      "body": [
         {
           "img": "./assets/img/fluid/poster 5.png",
           "caption": ""
@@ -44,17 +106,6 @@
         {
           "img": "./assets/img/fluid/poster 3.png",
           "caption": ""
-        }
-      ]
-    },
-    {
-      "heading": "About Fluidwork",
-      "body": [
-        {
-          "p": "Fluidwork Business Solution UK offers a comprehensive project and program management solution. Fluid empowers teams with a shared purpose to collaborate more effectively in meetings, projects, and various team activities."
-        },
-        {
-          "p": "The visual identity of the brand takes cues from the minimalist lifestyle and aesthetic. Embracing minimalist design principles, it advances ideas by distilling them to their essential elements, employing clean, modern, and minimalistic choices in aesthetics, fonts, and colors."
         },
         {
           "img": "./assets/img/fluid/facebook poster.png",
@@ -75,6 +126,17 @@
         {
           "img": "./assets/img/fluid/poster 15.png",
           "caption": ""
+        }
+      ]
+    },
+    {
+      "heading": "What the client said",
+      "body": [
+        {
+          "quote": "Our company brand is our identity. Gokul went above and beyond the usual to understand us and help us build a brand that represents us and is unique. Great working with him."
+        },
+        {
+          "p": "Dan Justin, CEO, Fluid.work UK"
         }
       ]
     }

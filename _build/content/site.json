@@ -1,6 +1,6 @@
 {
   "name": "Sri Gokul Krishnan",
-  "role": "Product designer",
+  "role": "Product designer & frontend developer",
   "email": "hello@cosmonus.com",
   "phone": "+91 7358554791",
   "social": [
@@ -18,52 +18,95 @@
     ]
   ],
   "hero": {
-    "kicker": "Product designer · India",
-    "title": "I design products people can trust, and use without thinking.",
-    "lead": "I'm Sri Gokul Krishnan. I take complex ideas and turn them into clear, user-friendly interfaces, from brand identities and websites to the map-first rental app StayOnMap and the real-world social app Happenous."
+    "kicker": "Product designer & frontend developer",
+    "title": "I design, build and bring digital products to life.",
+    "serif": "to life",
+    "lead": "I'm Sri Gokul Krishnan. I work directly with founders and businesses to turn ideas into clear interfaces, fast websites and working products, from the first sketch to the shipped app.",
+    "availability": "Available for select projects · Worldwide",
+    "proof": "I've also designed and built two products of my own, StayOnMap and Happenous. Both are live today."
   },
   "about": {
     "intro": [
-      "I'm a creative problem solver with a background in product design. I thrive on the challenge of taking complex ideas and transforming them into user-friendly interfaces. I'm skilled in UI/UX design, prototyping, and collaborating with cross-functional teams to bring products to life.",
+      "I'm a product designer and frontend developer. I work on the whole arc of a digital product: understanding the business problem, designing how it should work, and building the interface people actually use.",
       "Today I'm building Cosmonus and its products, StayOnMap and Happenous: two apps that start from the real world, a home on a map and a plan with people nearby. Before that I ran AstusX, a design studio for startups, and worked on brand, web and product design for clients in India and the UK.",
       "Beyond design, I find life's richness in diverse experiences. Video games offer an escape into fantastical worlds, the vibrant flavours of street food are a constant delight, novels pull me in, and exploring on my Himalayan motorcycle is pure adrenaline."
     ],
     "photo": "./assets/img/gokul.jpg"
   },
   "services": [
-    [
-      "Product design",
-      "End-to-end UX and UI for web and mobile apps, from research and flows to shipped screens."
-    ],
-    [
-      "Design systems",
-      "Tokens, components and rules that keep a product consistent across web and Android."
-    ],
-    [
-      "Brand identity",
-      "Logos, wordmarks, visual identity and marketing assets that feel like the company."
-    ],
-    [
-      "Websites",
-      "Fast, clear marketing sites, designed and built, often in days rather than weeks."
-    ]
+    {
+      "name": "Product Design & UI/UX",
+      "slug": "product-design",
+      "for": "SaaS founders and product teams with a web or mobile app that is hard to use, or not designed yet.",
+      "problem": "People sign up and get lost. Features exist but nobody finds them. Each new screen looks a little different from the last.",
+      "includes": [
+        "UX research and user flows",
+        "Wireframes and clickable prototypes",
+        "Dashboards, web apps and mobile apps",
+        "Design systems: tokens, components and rules"
+      ],
+      "receive": "Organised Figma files, a clickable prototype and a design system your developers can build from.",
+      "proof": "StayOnMap, Happenous, Travelmate"
+    },
+    {
+      "name": "Website Design & Development",
+      "slug": "websites",
+      "for": "Startups and businesses whose website doesn't yet explain what they do, or doesn't bring in enquiries.",
+      "problem": "Visitors leave without understanding the offer. The site is slow, hard to update, or looks unlike the company it represents.",
+      "includes": [
+        "Page structure and messaging",
+        "Visual design for desktop, tablet and mobile",
+        "Development in React, Next.js or plain HTML/CSS",
+        "SEO basics, analytics and performance"
+      ],
+      "receive": "A live, fast, responsive website you own, with the source code and a walkthrough of how to update it.",
+      "proof": "Fluid.Work, Game On, Cosmonus"
+    },
+    {
+      "name": "MVP Design & Development",
+      "slug": "mvp",
+      "for": "Founders with a product idea who need a first working version in front of real users.",
+      "problem": "The idea is clear in your head but not yet on a screen, and you need something real to put in front of users.",
+      "includes": [
+        "Product discovery and MVP scoping",
+        "Product design for the core flows",
+        "Frontend development, AI-assisted where it speeds things up",
+        "Backend and API integrations where the project needs them"
+      ],
+      "receive": "A working first version of your product, plus the designs and code to keep building on.",
+      "proof": "StayOnMap and Happenous, which I designed and built myself"
+    },
+    {
+      "name": "Branding & Creative",
+      "slug": "branding",
+      "for": "New companies and companies that have outgrown their first logo.",
+      "problem": "The brand feels like a placeholder, or every page and post looks like it came from a different company.",
+      "includes": [
+        "Logo and brand identity",
+        "Colour, type and visual systems",
+        "Marketing assets and social templates",
+        "Marketing websites in the new identity"
+      ],
+      "receive": "A brand kit with logo files, colours, type and usage rules, plus the assets to launch with.",
+      "proof": "Fluid.Work, AstusX, Cosmonus"
+    }
   ],
   "process": [
     [
-      "Empathize",
-      "The journey begins with empathy. I delve deep into user research, understanding the challenges and aspirations of my target audience. This user-centric approach ensures my designs are not just beautiful, but truly solve problems that matter."
+      "Talk",
+      "Message me on WhatsApp or send the project form. We talk through what you're building, who it's for and when it needs to be live."
     ],
     [
-      "Define",
-      "From user insights, I craft a clear problem statement. This defines the core challenge we're trying to solve, ensuring my designs address the user's needs and not just assumptions."
+      "Plan",
+      "I write a short plan: what's included, the steps, the timeline and the price. Work starts only once you've agreed to it."
     ],
     [
-      "Ideate",
-      "This is where the magic happens. The problem statement sparks a burst of creative brainstorming. Through sketching, mind mapping and playful experimentation, I explore a multitude of potential solutions, ensuring no innovative idea goes unexplored."
+      "Design & build",
+      "You see progress at every step and give feedback along the way, so there are no surprises at the end."
     ],
     [
-      "Prototype",
-      "I create low- or high-fidelity prototypes of the design ideas, test them with users to gather feedback, and iterate on the design until it works."
+      "Launch & hand over",
+      "You get the files, the code and a walkthrough. I'm still a message away for fixes and whatever comes next."
     ]
   ],
   "experience": [
@@ -131,62 +174,82 @@
       "Gokul is very proactive, taking charge of design projects and making sure everything is followed up on. He produces good content quickly, and engages with clients to make sure that he is meeting the brief. He is friendly and great to work with.",
       "Shruthi Balasa",
       "Founder, Thirus",
-      "./assets/img/avatars/shruthi.jpeg"
+      "./assets/img/avatars/shruthi.jpeg",
+      "Design projects"
     ],
     [
       "Our company brand is our identity. Gokul went above and beyond the usual to understand us and help us build a brand that represents us and is unique. Great working with him.",
       "Dan Justin",
       "CEO, Fluid.work UK",
-      "./assets/img/avatars/Dan.jpeg"
+      "./assets/img/avatars/Dan.jpeg",
+      "Brand identity & website"
     ],
     [
       "Gokul demonstrated exceptional professionalism and skill throughout our project. He quickly grasped the project requirements and delivered a polished, fully functional website within a tight timeframe. His communication was clear and consistent, and he approached feedback with a collaborative attitude, ensuring every detail met expectations.",
       "Sabari Smat",
       "Founder, Flawlex",
-      "./assets/img/avatars/testimonial3.jpg"
+      "./assets/img/avatars/testimonial3.jpg",
+      "Website"
     ],
     [
       "I am very delighted and happy with this organization's support, they evaluate my startup niche and provided the defined digital support for establishing a website and took their effort to escalate our presence in social media networks. Thanks for the effective service and support. Really wonderful working with Gokul",
       "Monish Prashanth",
       "ex-CEO, Stopnosms",
-      "./assets/img/avatars/testimonial6.jpeg"
+      "./assets/img/avatars/testimonial6.jpeg",
+      "Website & social media"
     ],
     [
       "Working with Gokul was one of the best experiences I’ve had. He delivered a clean, responsive website in just two days—exactly what I needed. No rush, no stress—just a true commitment to getting it right. His design and development skills are excellent, but it’s his reliability and willingness to go the extra mile that really stand out. I’d gladly work with him again. Great job, Gokul!",
       "Harsha",
       "Project RhineX Circle",
-      "./assets/img/avatars/testimonial4.jpeg"
+      "./assets/img/avatars/testimonial4.jpeg",
+      "Several projects"
     ],
     [
       "Working with Sri Gokul Krishnan at Bitfumes was a great experience. His creativity, attention to detail, and ability to deliver impactful designs stood out. On our rebranding project, his visuals boosted customer engagement by 20%. Gokul is reliable, meets deadlines, and communicates clearly. Highly recommended!",
       "Manpreet Singh",
       "Freelance developer",
-      "./assets/img/avatars/testimonial5.jpeg"
+      "./assets/img/avatars/testimonial5.jpeg",
+      "Bitfumes rebrand"
     ]
   ],
   "projects": [
     {
       "slug": "stayonmap",
       "title": "StayOnMap",
-      "kind": "Product",
+      "kind": "My product · design & build",
       "tags": [
         "Product",
         "Web",
         "Mobile"
       ],
       "summary": "A broker-free rental map for India. Discover homes on the map, see why you can trust them, contact owners directly.",
-      "card": "./assets/img/stayonmap/card-map.jpg"
+      "card": "./assets/img/stayonmap/card-map.jpg",
+      "group": "products"
     },
     {
       "slug": "happenous",
       "title": "Happenous",
-      "kind": "Product",
+      "kind": "My product · design & build",
       "tags": [
         "Product",
         "Mobile"
       ],
       "summary": "An activity-first social app for meeting people in real life: find an Activity, join the Crew, show up.",
-      "card": "./assets/img/happenous/card-activities.jpg"
+      "card": "./assets/img/happenous/card-activities.jpg",
+      "group": "products"
+    },
+    {
+      "slug": "fluidwork",
+      "title": "Fluid.Work",
+      "kind": "Client · brand & web",
+      "tags": [
+        "Branding",
+        "Web"
+      ],
+      "summary": "A complete rebrand for a UK project-management company: logo, identity, marketing assets and website.",
+      "card": "./assets/img/fluid/poster 6.png",
+      "group": "client"
     },
     {
       "slug": "cosmonus",
@@ -197,18 +260,31 @@
         "Web"
       ],
       "summary": "The company behind StayOnMap and Happenous: a quiet identity and a website built in our own studio.",
-      "card": "./assets/img/cosmonus/card.png"
+      "card": "./assets/img/cosmonus/card.png",
+      "group": "client"
     },
     {
-      "slug": "fluidwork",
-      "title": "Fluid.Work",
-      "kind": "Brand & web",
+      "slug": "",
+      "url": "https://gameonevent.in/",
+      "title": "Game On!",
+      "kind": "Website revamp",
       "tags": [
-        "Branding",
         "Web"
       ],
-      "summary": "A rebrand for a UK project-management company: identity, marketing assets and website.",
-      "card": "./assets/img/fluid/poster 6.png"
+      "summary": "A website revamp for Game On, a sports event.",
+      "card": "./assets/img/gameon.png",
+      "group": "client"
+    },
+    {
+      "slug": "astusx",
+      "title": "AstusX",
+      "kind": "Branding",
+      "tags": [
+        "Branding"
+      ],
+      "summary": "My design studio for startups: logos, packaging, branded clothing and social campaigns.",
+      "card": "./assets/img/gworks/logo monogram.png",
+      "group": "client"
     },
     {
       "slug": "travelmate",
@@ -219,60 +295,65 @@
         "Web"
       ],
       "summary": "An AI travel planner that streamlines research, booking and itineraries, backed by research with 30 travellers.",
-      "card": "./assets/img/travelmate.png"
+      "card": "./assets/img/travelmate.png",
+      "group": "exercise"
     },
     {
       "slug": "closet",
       "title": "Closet",
-      "kind": "UX case study",
+      "kind": "Design exercise · 48 hrs",
       "tags": [
         "Case study",
         "Mobile"
       ],
       "summary": "A 48-hour sprint to revamp a clothing e-commerce app that struggles with conversion.",
-      "card": "./assets/img/banner11.png"
+      "card": "./assets/img/banner11.png",
+      "group": "exercise"
     },
     {
       "slug": "homedeco",
       "title": "Homedeco",
-      "kind": "VR case study",
+      "kind": "Design exercise · 48 hrs",
       "tags": [
         "Case study"
       ],
       "summary": "A VR dashboard for designing your living room: projects, editing, notifications and an asset gallery.",
-      "card": "./assets/img/homedeco.png"
-    },
-    {
-      "slug": "astusx",
-      "title": "AstusX",
-      "kind": "Branding",
-      "tags": [
-        "Branding"
-      ],
-      "summary": "My design studio for startups: logos, packaging, branded clothing and social campaigns.",
-      "card": "./assets/img/gworks/logo monogram.png"
+      "card": "./assets/img/homedeco.png",
+      "group": "exercise"
     },
     {
       "slug": "traffic-monitoring",
       "title": "Traffic Monitoring",
-      "kind": "Dashboard case study",
+      "kind": "Design exercise · 24 hrs",
       "tags": [
         "Case study",
         "Web"
       ],
       "summary": "A 24-hour sprint designing a real-time traffic incident dashboard for city authorities.",
-      "card": "./assets/img/Test Task.png"
-    },
-    {
-      "slug": "",
-      "url": "https://gameonevent.in/",
-      "title": "Game On!",
-      "kind": "Website",
-      "tags": [
-        "Web"
-      ],
-      "summary": "Website design for a sports event.",
-      "card": "./assets/img/gameon.png"
+      "card": "./assets/img/Test Task.png",
+      "group": "exercise"
     }
+  ],
+  "stack": [
+    [
+      "Design",
+      "Figma, design systems, prototyping, brand identity"
+    ],
+    [
+      "Frontend",
+      "React, Next.js, TypeScript, Tailwind CSS, HTML and CSS"
+    ],
+    [
+      "Mobile",
+      "React Native and Expo"
+    ],
+    [
+      "Backend & data",
+      "Node.js, Express, PostgreSQL, Prisma, REST APIs"
+    ],
+    [
+      "Motion",
+      "Remotion, CSS and JavaScript animation"
+    ]
   ]
 }
