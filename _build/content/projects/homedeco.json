@@ -1,0 +1,81 @@
+{
+  "title": "Homedeco",
+  "tagline": "A VR platform for designing your living room",
+  "meta": [
+    [
+      "Type",
+      "Case study"
+    ],
+    [
+      "Duration",
+      "48 hrs sprint"
+    ],
+    [
+      "Platform",
+      "VR dashboard"
+    ]
+  ],
+  "links": [],
+  "sections": [
+    {
+      "heading": "About the project",
+      "body": [
+        {
+          "p": "Designing a home decor platform that allows users to customize their living room. The platform will include features for selecting and placing furniture, choosing textures for walls and floors, and integrating other decorative elements like lighting and accessories."
+        },
+        {
+          "p": "Case Study"
+        }
+      ]
+    },
+    {
+      "heading": "Design objectives",
+      "body": [
+        {
+          "p": "Dashboard of the VR platform. The layout is focused on project management, where users can view recent and active projects. A list of projects, such as \"HOMEDECO\" and others like \"INDDECO\" and \"DECOR,\" is shown, with options to \"Edit,\" \"Preview,\" or \"Delete\" the current project. Key navigation icons are present on the left sidebar, leading to various functionalities such as analytics, settings, project lists, and other sections. The content is presented visually, with project thumbnails and key dates to give users context at a glance."
+        },
+        {
+          "img": "./assets/img/Task 1 _ Dashboard.png",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "heading": "Project editing interface",
+      "body": [
+        {
+          "p": "The central focus is on the preview of the room design. To the right, there’s an asset management panel where users can drag and drop furniture or other elements into the design. Options for textures, rooms, and color palettes are also provided at the bottom. The “VR mode” option at the top enables users to view the scene in virtual reality."
+        },
+        {
+          "img": "./assets/img/Task 2 _ Project Page.png",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "heading": "Notification system",
+      "body": [
+        {
+          "p": "The Notifications Panel, where users can see requests, alerts, and updates. The example shows a list of emails from a user requesting edit access to a project. Users can quickly decide the permissions for each request via a dropdown (can view/can edit) or delete them using the red trash icon. The notifications are categorized into “Requests,” “Unread,” “Read,” and “Deleted” for easy management."
+        },
+        {
+          "img": "./assets/img/Task 1 _ Notification Page.png",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "heading": "Gallery",
+      "body": [
+        {
+          "p": "The Gallery page of the VR platform allows users to upload, organize, and manage a variety of assets, including tables, lamps, flower pots, textures, and furniture, for use in their VR experiences. Each tab is designed to help categorize these assets, making it easy for users to find and manage their resources efficiently."
+        },
+        {
+          "img": "./assets/img/Task 1 _ Gallery.png",
+          "caption": ""
+        }
+      ]
+    }
+  ],
+  "hero": "./assets/img/7 Ideal View.png"
+}

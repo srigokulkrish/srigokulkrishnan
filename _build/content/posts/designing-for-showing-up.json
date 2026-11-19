@@ -1,0 +1,28 @@
+{
+  "title": "Designing for showing up",
+  "date": "2026-11-19",
+  "summary": "Happenous is a social app that measures success by whether you left the house. Here's how check-in, Crews and \"two locations\" shape the design.",
+  "cover": "./assets/img/happenous/card-out-of-app.jpg",
+  "tags": ["Happenous", "Product design", "Trust"],
+  "sections": [
+    {"heading": "", "body": [
+      {"p": "Most social apps are designed to keep you scrolling. With Happenous we wanted the opposite: an app that has done its job when you put your phone away and go for the run, the badminton game or the coffee. That single goal changes a surprising number of design decisions."}
+    ]},
+    {"heading": "Attendance is the anchor", "body": [
+      {"p": "In Happenous, someone hosts an Activity, others ask to join, and the Host accepts them into the Crew. But being accepted isn't the point. Showing up is. So the moment that matters is check-in: on arrival, each person enters the Host's six-character code."},
+      {"p": "Everything meaningful happens after that moment. You can only review the people you actually met, Moments come from Activities you attended, and Recognition is built from recorded events, not from activity in the app. The design rewards real-world action and nothing else."},
+      {"p": "We were careful not to oversell it, either. Check-in shows that someone had the code during the Activity. It isn't an ID check, and the app says so plainly."}
+    ]},
+    {"heading": "A location is two locations", "body": [
+      {"p": "Meeting strangers raises an obvious safety question: who gets to know where you'll be? Our answer was to treat every Activity's location as two locations. Before a Host accepts you, you see only an area about 3 km across. Once you're in the Crew, the exact meeting point and the Crew chat open."},
+      {"p": "Designing this meant the discovery screens could never depend on the exact point at all. Maps, lists and search all work from the approximate area, which is a stronger guarantee than hiding a field in the UI."}
+    ]},
+    {"heading": "Words set expectations", "body": [
+      {"p": "Vocabulary turned out to be one of the most important design tools. An \"event\" with \"attendees\" sounds like a ticketed thing you watch. An Activity with a Crew sounds like something you do together. We say Host, not organiser. Buddy, not follower, and a Buddy only forms after you've done something together, so there are no one-way follows. A photo you share is a Moment, never a post."},
+      {"p": "We keep those words consistent across the app, the website and even the error messages, because inconsistent language quietly teaches people a different product."}
+    ]},
+    {"heading": "Restraint in the interface", "body": [
+      {"p": "The visual design follows the same idea. White is the ground everywhere, there are no gradients, and Happenous Orange appears at most once per screen, on the one thing you should do next. Motion is quick and calm, with a slightly longer \"celebrate\" moment reserved for things worth celebrating, like a new Buddy, and never used for penalties. When the goal is to get people off the screen, the screen shouldn't shout."}
+    ]}
+  ]
+}

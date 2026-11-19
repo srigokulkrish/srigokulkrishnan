@@ -1,548 +1,142 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="An impressive and flawless site template that includes various UI elements and countless features, attractive ready-made blocks and rich pages, basically everything you need to create a unique and professional website.">
-  <meta name="keywords" content="bootstrap 5, business, corporate, creative, gulp, marketing, minimal, modern, multipurpose, one page, responsive, saas, sass, seo, startup, html5 template, site template">
-  <meta name="author" content="elemis">
-  <title>Sri Gokul Krishnan - Travelmate</title>
-  <link rel="shortcut icon" href="./assets/img/favicon.png">
-  <link rel="stylesheet" href="./assets/css/plugins.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="./assets/css/colors/navy.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Travelmate · Sri Gokul Krishnan</title>
+  <meta name="description" content="Travelmate: An AI travel planner that streamlines research, booking and itineraries, backed by research with 30 travellers.">
+  <meta name="author" content="Sri Gokul Krishnan">
+  <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e0e0d" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Travelmate · Sri Gokul Krishnan">
+  <meta property="og:description" content="Travelmate: An AI travel planner that streamlines research, booking and itineraries, backed by research with 30 travellers.">
+  <meta property="og:image" content="https://www.srigokulkrishnan.com/assets/img/travelmate.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="./assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=Instrument+Serif:ital@0;1&display=swap">
+  <link rel="stylesheet" href="./assets/site/site.css">
+  <script>
+    document.documentElement.classList.add('js');
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
 </head>
-
 <body>
-  <div class="content-wrapper">
-    <header class="wrapper bg-light">
-      <nav class="navbar navbar-expand-lg center-nav transparent navbar-light">
-        <div class="container flex-lg-row flex-nowrap align-items-center">
-          <div class="navbar-brand w-100">
-            <a href="./index.html">
-              <img src="./assets/img/logo-dark.png" srcset="./assets/img/logo-dark.png" alt="" />
-            </a>
-          </div>
-          <div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
-            <div class="offcanvas-header d-lg-none">
-              <h3 class="text-white fs-30 mb-0">Sri Gokul Krishnan</h3>
-              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
-              <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="index.html" >Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="aboutme.html" >About</a></li>
-                <li class="nav-item"><a class="nav-link" href="work.html" >Work</a></li>
-                <li class="nav-item"><a class="nav-link" href="blog.html" >Blog</a></li>
-
-              </ul>
-              <!-- /.navbar-nav -->
-              <div class="offcanvas-footer d-lg-none">
-                <div>
-                  <a href="srigokulkrishnan@gmail.com" class="link-inverse">srigokulkrishnan@gmail.com</a>
-                  <br /> +91 7358554791<br />
-                  <nav class="nav social social-white mt-4">
-                    <a href="https://twitter.com/srigokulkrishn"><i class="uil uil-twitter"></i></a>
-                    <a href="https://www.instagram.com/srigokulkrishnan/"><i class="uil uil-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/sri-gokul-krishnan-/"><i class="uil uil-linkedin"></i></a>
-                  </nav>
-                  <!-- /.social -->
-                </div>
-              </div>
-              <!-- /.offcanvas-footer -->
-            </div>
-            <!-- /.offcanvas-body -->
-          </div>
-          <!-- /.navbar-collapse -->
-          <div class="navbar-other w-100 d-flex ms-auto">
-            <ul class="navbar-nav flex-row align-items-center ms-auto">
-              <li class="nav-item">
-                <nav class="nav social social-muted justify-content-end text-end">
-                  <a href="https://twitter.com/srigokulkrishn"><i class="uil uil-twitter"></i></a>
-                  <a href="https://www.instagram.com/srigokulkrishnan/"><i class="uil uil-instagram"></i></a>
-                  <a href="https://www.linkedin.com/in/sri-gokul-krishnan-/"><i class="uil uil-linkedin"></i></a>
-                </nav>
-                <!-- /.social -->
-              </li>
-              <li class="nav-item d-lg-none">
-                <button class="hamburger offcanvas-nav-btn"><span></span></button>
-              </li>
-            </ul>
-            <!-- /.navbar-nav -->
-          </div>
-          <!-- /.navbar-other -->
-        </div>
-        <!-- /.container -->
-      </nav>
-    </header>
-    <!-- /header -->
-
-
-    <section class="wrapper image-wrapper bg-image bg-overlay text-white" data-image-src="./assets/img/imagee.jpg">
-      <div class="container py-20 text-center">
-        <div class="row">
-          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-            <div class="post-header">
-              <div class="post-category text-line text-white">
-                <a href="#" class="text-reset" rel="category">UI/UX Case Study</a>
-              </div>
-              <!-- /.post-category -->
-              <h1 class="display-1 mb-3 text-white">Travelmate</h1>
-              <p class="lead px-md-12 px-lg-12 px-xl-15 px-xxl-18">Where wanderlust meets intelligence.</p>
-            </div>
-            <!-- /.post-header -->
-          </div>
-          <!-- /column -->
-        </div>
-        <!-- /.row -->
-      </div>
-      <!-- /.container -->
-    </section>
-    <!-- /section -->
-    <section class="wrapper bg-light ">
-      <div class="container pt-14 pt-md-16 pb-13 pb-md-15">
-        <div class="row">
-          <div class="col-lg-10 offset-lg-1">
-            <article>
-              <h2 class="display-6 mb-4">About the Project</h2>
-              <div class="row gx-0">
-                <div class="col-md-9 text-justify">
-                  <p>TravelMate reimagines travel planning as an AI-powered web application, empowering adventurous explorers like Ruthresh Kumar to navigate the world with confidence. Our vision is to eliminate the stress and overwhelm of trip planning, allowing users to focus on creating unforgettable memories. </p>
-                  <ul class="icon-list bullet-bg bullet-soft-primary mb-0">
-                    <p>Here are some of the benefits of using an AI trip planner:</p>
-                    <li><span><i class="uil uil-check"></i></span>Customization: AI planners take into account your interests, budget, travel style (adventure, relaxation, etc.) and even things like how much walking you're comfortable with to create a trip that's perfect for you.</li>
-                    <li><span><i class="uil uil-check"></i></span>Time-saving: No more spending hours researching flights, hotels and activities. AI planners can do that for you in minutes.</li>
-                    <li><span><i class="uil uil-check"></i></span>Inspiration: AI can find unique things you might not have discovered on your own based on current trends and your preferences.</li>
-                  </ul>
-                </div>
-                <!--/column -->
-                <div class="col-md-2 ms-auto">
-                  <ul class="list-unstyled">
-                    <li>
-                      <h5 class="mb-1">Project Type</h5>
-                      <p>Case Study</p>
-                    </li>
-                    <li>
-                      <h5 class="mb-1">Project Duration</h5>
-                      <p>3 weeks</p>
-                    </li>
-                  </ul>
-                  <a href="#" class="more hover">See Projects</a>
-                </div>
-                <!--/column -->
-
-              </div>
-              <!--/.row -->
-             
-              <div class="row mt-8 mt-md-8">
-                <div class="col-md-12 text-justify">
-                  <h2 class="mb-2">The Problem</h2>
-                  <p class="mb-0">Conventional travel planning involves juggling multiple websites and resources, leading to : Time-consuming research and itinerary building. Difficulty in finding unique and personalized experiences. Lack of integrated booking platforms for a streamlined experience.</p>
-                </div>
-                <!-- /column -->
-              </div>
-              <!-- /.row -->
-              <div class="row mt-8 mt-md-8">
-                <div class="col-md-12 text-justify">
-                  <h2 class="mb-2">The Goal</h2>
-                  <p class="">Designing an efficient and personalized travel planning tool that streamlines the process without sacrificing the thrill of discovery.</p>
-                  <ul class="icon-list bullet-bg bullet-soft-primary mb-0">
-                    <li><span><i class="uil uil-check"></i></span>Effortless Planning: Simplify trip planning with AI-powered suggestions and automation.</li>
-                    <li><span><i class="uil uil-check"></i></span>Personalized Itineraries: Craft custom itineraries tailored to Ruthresh Kumar's interests, budget, and travel style.</li>
-                    <li><span><i class="uil uil-check"></i></span>Unique Discoveries: Uncover off-the-beaten-path adventures and authentic experiences.</li>
-                    <li><span><i class="uil uil-check"></i></span>Seamless Booking: Book flights, accommodation, and activities directly within the web app.</li>
-                    <li><span><i class="uil uil-check"></i></span>Local Immersion: Connect with local experiences and cultural offerings.</li>
-                  </ul>
-
-                </div>
-                <!-- /column -->
-              </div>
-              <!-- /.row -->
-
-              <div class="row mt-8 mt-md-8">
-                <div class="col-md-12 text-justify">
-                  <h2 class="mb-2">The Deliverables :</h2>
-                  <ul class="icon-list bullet-bg bullet-soft-primary mb-0">
-                    <li><span><i class="uil uil-star"></i></span>User Research </li>
-                    <li><span><i class="uil uil-star"></i></span>Empathy map </li>
-                    <li><span><i class="uil uil-star"></i></span>Persona</li>
-                    <li><span><i class="uil uil-star"></i></span>Information Architecture</li>
-                    <li><span><i class="uil uil-star"></i></span>Wireframe & Visual Design</li>
-                  </ul>
-
-                </div>
-                <!-- /column -->
-              </div>
-              <!-- /.row -->
-
-              <div class="row mt-8 mt-md-16">
-                <div class="col-md-12 text-justify">
-                  <h1 class="display-5 text-center">The Double Diamond Design approach</h1>
-                  <div class="col-md-12 py-2 pb-8">
-                    <figure class=" rounded cursor-dark">
-                        <a href="./assets/img/dd.jpg" data-glightbox data-gallery="project-4">
-                          <img src="./assets/img/dd.jpg" srcset="./assets/img/dd.jpg" alt="" />
-                        </a>
-                      </figure>
-                  </div>
-                  <h2 class="mb-2">Understanding the travelers :</h2>
-                  <p class="mb-0">A thirst for adventure transcends age and background. Teenagers, backpackers, families, and professionals alike all share a desire to explore beyond the typical tourist path. The web interface provides a user-friendly experience for planning trips, regardless of location or device. Users can access TravelMate from laptops, tablets, or desktops, ensuring a convenient and efficient planning process.</p>
-                </div>
-                <!-- /column -->
-              </div>
-              <!-- /.row -->
-
-              <div class="row mt-8 mt-md-8">
-                <div class="col-md-12 text-justify">
-                  <h2 class="mb-2">Qualitative Research Insights :</h2>
-                  <p>TravelMate conducted qualitative research through in-depth interviews with 30 adventurous travelers aged 16-50. The focus was on understanding their motivations for adventure travel, past travel experiences, and the frustrations they encountered. Here's a glimpse into their qualitative insights:</p>
-                
-                  <ul class="icon-list bullet-bg bullet-soft-primary mb-0">
-                    <li><span><i class="uil uil-star"></i></span>Thrill-Seeking: Participants expressed a strong desire for pushing boundaries and venturing beyond typical tourist experiences. Words like "adventure," "unique," and "off-the-beaten-path" were prevalent.</li>
-                    <li><span><i class="uil uil-star"></i></span>Information Overload: While finding popular destinations was easy, participants found it difficult to unearth details about hidden gems, adventure activities, and local experiences. The feeling of information overload due to generic recommendations was a common theme.</li>
-                    <li><span><i class="uil uil-star"></i></span>Booking Frustration: Juggling multiple platforms for research, flights, accommodation, and activities was a significant pain point. Participants described the booking process as time-consuming and tedious, desiring a streamlined solution.</li>
-                    <li><span><i class="uil uil-star"></i></span>The Ideal Travel Companion: A recurring theme was the need for a user-friendly platform that would simplify the entire process. Participants envisioned features like:
-                      <span class="pt-2">
-                        <br>
-                        - Personalized recommendations: Tailored to interests, budget, and travel style.
-                        <br>
-                        - Customizable itineraries: Incorporating exploration and exciting activities.
-                        <br>
-                        - Integrated booking: A one-stop shop for booking everything.
-                      </span></li>
-                  </ul>
-                
-                </div>
-                <!-- /column -->
-              </div>
-              <!-- /.row -->
-
-              <div class="row mt-8 mt-md-8">
-                <div class="col-md-12 text-justify">
-                  <h2 class="mb-2">Quantitative Research Insights :</h2>
-                  <p>TravelMate conducted a quantitative research survey with 30 adventurous travelers aged 16-50.
-
-                    The aim was to gather quantifiable data on their travel planning habits and preferences. Here are some key insights:</p>
-
-
-                    <ul class="icon-list bullet-bg bullet-soft-primary mb-0">
-                      <li class="contentQuant">
-                        <h5>Time Investment:</h5>
-                        <p>
-                          <ul class="icon-list bullet-bg bullet-soft-primary pb-0">
-                            <li><span><i class="uil uil-check"></i></span> Average time spent planning a trip: 7 - 8 hours </li>
-                            <li><span><i class="uil uil-check"></i></span>  Percentage of participants who find planning a trip to be time-consuming: 63.3%</li>
-                          </ul>
-                        </p>
-                      </li>
-                      <li class="contentQuant">
-                        <h5>Information Channeling :</h5>
-                        <p>
-                          <ul class="icon-list bullet-bg bullet-soft-primary pb-0">
-                            <li><span><i class="uil uil-check"></i></span> Number of online platforms used for travel research : 4 (Travel blog/websits, Social media platforms, Travel agencies, Destination Specific Websites).  </li>
-                            <li><span><i class="uil uil-check"></i></span> Percentage of participants who find using multiple platforms frustrating : 73.4% </li>
-                            <li><span><i class="uil uil-check"></i></span>Average no of people find detailed information about off-the-beaten-path destinations and adventure activities online : 76.6%
-                            </li>
-
-                          </ul>
-                        </p>
-                      </li>
-                      <li class="contentQuant">
-                        <h5>Limitations :</h5>
-                        <p>
-                          The data gathered from these 30 participants paints a preliminary picture of the challenges faced by adventurous travelers. Further research with a larger sample can solidify these findings and provide deeper insights. This data, combined with the qualitative research findings, can guide the development of TravelMate's functionalities to effectively address user needs and preferences.
-                        </p>
-                      </li>
-                    </ul>
-                
-                </div>
-                <!-- /column -->
-              </div>
-              <!-- /.row -->
-
-              <div class="row mt-8 mt-md-8">
-                <div class="col-md-12 text-justify">
-                  <h2 class="mb-2">Empathy map :</h2>
-                  <p>This empathy map outlines the thoughts,
-                    feelings, needs, and experiences of adventurous travelers who are the target audience for TravelMate.</p>
-                
-                    <div class="col-md-12 py-2 pb-8">
-                      <figure class=" rounded cursor-dark d-flex justify-content-center">
-                          <a  href="./assets/img/empathymap.png" data-glightbox data-gallery="project-4">
-                            <img src="./assets/img/empathymap.png" srcset="./assets/img/empathymap.png" alt="" />
-                          </a>
-                        </figure>
-                    </div>
-
-                </div>
-                <!-- /column -->
-              </div>
-              <!-- /.row -->
-
-              <div class="row mt-8 mt-md-8">
-                <div class="col-md-12 text-justify">
-                  <h2 class="mb-2">Persona :</h2>
-                  <p>
-                    <h6>Ruthresh Kumar</h6>
-                    <span> <b> Demographics: </b>  Age group: 18-35 </span> <br>
-
-                    <span> <b> Budget:  </b> Flexible, Travel Style: Focuses on affordability and cultural experiences</span>
-                    <br>
-                    <span> <b> Needs: </b>  Ruthresh Kumar is a young, tech-savvy traveler who prioritizes affordability and cultural richness in his journeys. His ideal travel planning tool needs to be an all-encompassing, user-friendly platform that offers comprehensive search capabilities, customizable recommendations, and real-time updates. Features like itinerary sharing, integrated maps, and weather forecasts will enhance his travel experience, ensuring smooth and well-organized trips.</span>
-                  </p>
-                </div>
-                <!-- /column -->
-              </div>
-              <!-- /.row -->
-
-              <div class="row mt-8 mt-md-8">
-                <div class="col-md-12 text-justify">
-                  <h2 class="mb-2">Story board : How does it work</h2>
-                  <p>Storyboarding is a visual planning tool that helps predict and refine how users will experience a product.
-                    (This focuses on the planning and improvement aspect)</p>
-                
-                    <div class="col-md-12 py-2 pb-8">
-                      <figure class=" rounded cursor-dark d-flex justify-content-center">
-                          <a  href="./assets/img/story board.png" data-glightbox data-gallery="project-4">
-                            <img src="./assets/img/story board.png" srcset="./assets/img/story board.png" alt="" />
-                          </a>
-                        </figure>
-                    </div>
-
-                </div>
-                <!-- /column -->
-              </div>
-              <!-- /.row -->
-
-              <div class="row mt-8 mt-md-8">
-                <div class="col-md-12 text-justify">
-                  <h2 class="mb-2">User Flow</h2>
-                  <p>User flow creation streamlined my understanding of app navigation and task completion.</p>
-                
-                    <div class="col-md-12 py-2 pb-8">
-                      <figure class=" rounded cursor-dark d-flex justify-content-center">
-                          <a  href="./assets/img/closetuser.png" data-glightbox data-gallery="project-4">
-                            <img src="./assets/img/closetuser.png" srcset="./assets/img/closetuser.png" alt="" />
-                          </a>
-                        </figure>
-                    </div>
-
-                </div>
-                <!-- /column -->
-              </div>
-              <!-- /.row -->
-
-              <div class="row mt-8 mt-md-8">
-                <div class="col-md-12 text-justify">
-                  <h2 class="mb-2">Information Architecture</h2>
-                  <p>The goal of IA is to create a user experience that is intuitive and efficient.
-                    Users shouldn't have to waste time hunting for information – they should be able to find what they need quickly and easily.</p>
-                
-                    <div class="col-md-12 py-2 pb-8">
-                      <figure class=" rounded cursor-dark d-flex justify-content-center">
-                          <a  href="./assets/img/travelmate info.png" data-glightbox data-gallery="project-4">
-                            <img src="./assets/img/travelmate info.png" srcset="./assets/img/travelmate info.png" alt="" />
-                          </a>
-                        </figure>
-                    </div>
-
-                </div>
-                <!-- /column -->
-              </div>
-              <!-- /.row -->
-
-              <div class="row mt-8 mt-md-8">
-                <div class="col-md-12 text-justify">
-                  <h2 class="mb-2">Sketch</h2>
-                  <p>I tried sketching using <b>CRAZY 8</b> method. The goal is to push beyond your first idea, frequently the least innovative, and to generate a wide variety of solutions to your challenge.</p>
-                
-                    <div class="col-md-12 py-2 pb-8">
-                      <figure class=" rounded cursor-dark d-flex justify-content-center">
-                          <a  href="./assets/img/sketch.jpg" data-glightbox data-gallery="project-4">
-                            <img src="./assets/img/sketch.jpg" srcset="./assets/img/sketch.jpg" alt="" />
-                          </a>
-                        </figure>
-                    </div>
-
-                </div>
-                <!-- /column -->
-              </div>
-              <!-- /.row -->
-
-              <div class="row mt-8 mt-md-8">
-                <div class="col-md-12 text-justify">
-                  <h2 class="mb-2">UI Style Guid</h2>
-                  
-                  <ul class="icon-list bullet-bg bullet-soft-primary mb-0">
-                    <li><span><i class="uil uil-star"></i></span>I have chosen  <b style="color: blue;">Blue</b> as my primary color, as Blue comes in a wide range of shades and tones,
-                      allowing you to evoke various emotions and functionalities within your design. Lighter blues can represent calmness and trust, while darker tones can suggest authority and security. </li>
-                    <li><span><i class="uil uil-star"></i></span> I have used <b> Sans-Serif </b> typeface <b> "Poppins" </b> as poppins offers a range of weights (thin,
-                      light, regular, medium, semi-bold, bold, extra-bold) and includes italics. This allows you to create a clear hierarchy between headings, subheadings, body text, and buttons. </li>
-
-                  </ul>
-
-                    <div class="col-md-12 py-4 pb-8">
-                      <figure class=" rounded cursor-dark d-flex justify-content-center">
-                          <a  href="./assets/img/Component1.png" data-glightbox data-gallery="project-4">
-                            <img src="./assets/img/Component1.png" srcset="./assets/img/Component1.png" alt="" />
-                          </a>
-                        </figure>
-                    </div>
-
-                </div>
-                <!-- /column -->
-              </div>
-              <!-- /.row -->
-
-              <div class="row mt-8 mt-md-8">
-                <div class="col-md-12 text-justify">
-                  <h2 class="mb-2">Wireframe & Visual Design</h2>
-                  <div class="col-md-12 py-4 pb-8">
-                    <div class="row gx-md-6 gy-6 isotope">
-                      <div class="project item col-md-6 col-xl-6 drinks events">
-                        <figure class="overlay  overlay-1 rounded"><a href="./assets/img/Home page w.png" data-glightbox data-gallery="shots-group"> <img src="./assets/img/Home page w.png" alt="" /></a>
-                          <figcaption>
-                            <h5 class="from-top mb-0">homepage wireframes</h5>
-                          </figcaption>
-                        </figure>
-                      </div>
-                      <!-- /.project -->
-                      <div class="project item col-md-6 col-xl-6 events ">
-                        <figure class="overlay border overlay-1 rounded"><a href="./assets/img/Home page.png" data-glightbox data-gallery="shots-group"> <img src="./assets/img/Home page.png" alt="" /></a>
-                          <figcaption>
-                            <h5 class="from-top mb-0">homepage</h5>
-                          </figcaption>
-                        </figure>
-                      </div>
-                      <!-- /.project -->
-                      <div class="project item col-md-6 col-xl-6 drinks foods">
-                        <figure class="overlay border overlay-1 rounded"><a href="./assets/img/Login Screen1.png" data-glightbox data-gallery="shots-group"> <img src="./assets/img/Login Screen1.png" alt="" /></a>
-                          <figcaption>
-                            <h5 class="from-top mb-0">wireframes login page</h5>
-                          </figcaption>
-                        </figure>
-                      </div>
-                      <!-- /.project -->
-                      <div class="project item col-md-6 col-xl-6 events">
-                        <figure class="overlay border overlay-1 rounded"><a href="./assets/img/Login Screen.png" data-glightbox data-gallery="shots-group"> <img src="./assets/img/Login Screen.png" alt="" /></a>
-                          <figcaption>
-                            <h5 class="from-top mb-0">login page</h5>
-                          </figcaption>
-                        </figure>
-                      </div>
-                      <!-- /.project -->
-                      <div class="project item col-md-6 col-xl-6 pastries events">
-                        <figure class="overlay border overlay-1 rounded"><a href="./assets/img/Sign up page1.png" data-glightbox data-gallery="shots-group"> <img src="./assets/img/Sign up page1.png" alt="" /></a>
-                          <figcaption>
-                            <h5 class="from-top mb-0">Wireframe signup</h5>
-                          </figcaption>
-                        </figure>
-                      </div>
-                      <!-- /.project -->
-                      <div class="project item col-md-6 col-xl-6 events">
-                        <figure class="overlay border overlay-1 rounded"><a href="./assets/img/Sign up page.png" data-glightbox data-gallery="shots-group"> <img src="./assets/img/Sign up page.png" alt="" /></a>
-                          <figcaption>
-                            <h5 class="from-top mb-0">signup</h5>
-                          </figcaption>
-                        </figure>
-                      </div>
-                      <!-- /.project -->
-                      <div class="project item col-md-6 col-xl-6 pastries events">
-                        <figure class="overlay border overlay-1 rounded"><a href="./assets/img/collect info.png" data-glightbox data-gallery="shots-group"> <img src="./assets/img/collect info.png" alt="" /></a>
-                          <figcaption>
-                            <h5 class="from-top mb-0">Wireframe collect info</h5>
-                          </figcaption>
-                        </figure>
-                      </div>
-                      <!-- /.project -->
-                      <div class="project item col-md-6 col-xl-6 events">
-                        <figure class="overlay border overlay-1 rounded"><a href="./assets/img/AI customiztion.png" data-glightbox data-gallery="shots-group"> <img src="./assets/img/AI customiztion.png" alt="" /></a>
-                          <figcaption>
-                            <h5 class="from-top mb-0">Collect info</h5>
-                          </figcaption>
-                        </figure>
-                      </div>
-                      <!-- /.project -->
-
-                      <div class="project item col-md-6 col-xl-6 events">
-                        <figure class="overlay border overlay-1 rounded"><a href="./assets/img/Trip Page1.png" data-glightbox data-gallery="shots-group"> <img src="./assets/img/Trip Page1.png" alt="" /></a>
-                          <figcaption>
-                            <h5 class="from-top mb-0">Trip itinerary Wireframe</h5>
-                          </figcaption>
-                        </figure>
-                      </div>
-                      <!-- /.project -->
-                      <div class="project item col-md-6 col-xl-6 events">
-                        <figure class="overlay border overlay-1 rounded"><a href="./assets/img/Trip Page.png" data-glightbox data-gallery="shots-group"> <img src="./assets/img/Trip Page.png" alt="" /></a>
-                          <figcaption>
-                            <h5 class="from-top mb-0">Trip itinerary</h5>
-                          </figcaption>
-                        </figure>
-                      </div>
-                      <!-- /.project -->
-                      <div class="project item col-md-12 col-xl-12 events">
-                        <figure class="overlay border overlay-1 rounded"><a href="./assets/img/Trip Page 4.png" data-glightbox data-gallery="shots-group"> <img src="./assets/img/Trip Page 4.png" alt="" /></a>
-                          <figcaption>
-                            <h5 class="from-top mb-0">Itinerary</h5>
-                          </figcaption>
-                        </figure>
-                      </div>
-                      <!-- /.project -->
-
-
-                    </div>
-                    <!-- /.row -->
-                    </div>
-
-                </div>
-                <!-- /column -->
-              </div>
-              <!-- /.row -->
-
-
-            </article>
-            <!-- /.project -->
-          </div>
-          <!-- /column -->
-        </div>
-        <!-- /.row -->
-      </div>
-      <!-- /.container -->
-    </section>
-    <!-- /section -->
-
-    
-
-
-
-
-  </div>
-  <!-- /.content-wrapper -->
-  <footer>
-    <div class="container pt-14 pt-md-18 pb-7">
-
-      <div class="d-md-flex align-items-center justify-content-between">
-        <p class="mb-2 mb-lg-0">© <script>
-            document.write(new Date().getUTCFullYear());
-          </script> Built with ❤️ from India.</p>
-        <nav class="nav social social-muted mb-0 text-md-end">
-          <a href="https://twitter.com/srigokulkrishn"><i class="uil uil-twitter"></i></a>
-          <a href="https://www.instagram.com/srigokulkrishnan/"><i class="uil uil-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/sri-gokul-krishnan-/"><i class="uil uil-linkedin"></i></a>
-        </nav>
-        <!-- /.social -->
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="./index.html" aria-label="Sri Gokul Krishnan, home"><span class="dot" aria-hidden="true"></span>Sri Gokul Krishnan</a>
+      <nav class="nav" id="nav" aria-label="Main"><a href="work.html" aria-current="page">Work</a><a href="aboutme.html">About</a><a href="blog.html">Writing</a><a href="mailto:srigokulkrishnan@gmail.com">Contact</a></nav>
+      <div class="header-actions">
+        <button class="icon-btn theme-toggle" type="button" aria-label="Switch light or dark theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
+        <button class="icon-btn menu-btn" type="button" aria-label="Menu" aria-controls="nav" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button>
       </div>
     </div>
-    <!-- /.container -->
+  </header>
+  <main id="main">
+<article>
+<header class="case-hero"><div class="wrap">
+  <a class="crumb reveal" href="./work.html">← All work</a>
+  <h1 class="reveal">Travelmate</h1>
+  <p class="tagline reveal">Where wanderlust meets intelligence.</p>
+  <dl class="meta reveal"><div><dt>Type</dt><dd>Case study</dd></div><div><dt>Duration</dt><dd>3 weeks</dd></div><div><dt>Platform</dt><dd>Web app</dd></div></dl>
+  
+</div></header>
+<div class="wrap"><div class="case-cover reveal"><img src="./assets/site/img/assets-img-travelmate-2000.webp" alt="Travelmate" width="1920" height="1080" fetchpriority="high"></div></div>
+<div class="wrap"><section class="case-section">
+  <h2 class="reveal"><span class="num">01</span>About the project</h2>
+  <div class="prose reveal"><p>TravelMate reimagines travel planning as an AI-powered web application, empowering adventurous explorers like Ruthresh Kumar to navigate the world with confidence. Our vision is to eliminate the stress and overwhelm of trip planning, allowing users to focus on creating unforgettable memories.</p>
+<p>Here are some of the benefits of using an AI trip planner:</p>
+<ul><li><strong>Customization:</strong> AI planners take into account your interests, budget, travel style (adventure, relaxation, etc.) and even things like how much walking you&#x27;re comfortable with to create a trip that&#x27;s perfect for you.</li><li><strong>Time-saving:</strong> No more spending hours researching flights, hotels and activities. AI planners can do that for you in minutes.</li><li><strong>Inspiration:</strong> AI can find unique things you might not have discovered on your own based on current trends and your preferences.</li></ul></div>
+</section><section class="case-section">
+  <h2 class="reveal"><span class="num">02</span>The problem</h2>
+  <div class="prose reveal"><p>Conventional travel planning involves juggling multiple websites and resources, leading to : Time-consuming research and itinerary building. Difficulty in finding unique and personalized experiences. Lack of integrated booking platforms for a streamlined experience.</p></div>
+</section><section class="case-section">
+  <h2 class="reveal"><span class="num">03</span>The goal</h2>
+  <div class="prose reveal"><p>Designing an efficient and personalized travel planning tool that streamlines the process without sacrificing the thrill of discovery.</p>
+<ul><li><strong>Effortless Planning:</strong> Simplify trip planning with AI-powered suggestions and automation.</li><li><strong>Personalized Itineraries:</strong> Craft custom itineraries tailored to Ruthresh Kumar&#x27;s interests, budget, and travel style.</li><li><strong>Unique Discoveries:</strong> Uncover off-the-beaten-path adventures and authentic experiences.</li><li><strong>Seamless Booking:</strong> Book flights, accommodation, and activities directly within the web app.</li><li><strong>Local Immersion:</strong> Connect with local experiences and cultural offerings.</li></ul></div>
+</section><section class="case-section">
+  <h2 class="reveal"><span class="num">04</span>Deliverables</h2>
+  <div class="prose reveal"><ul><li>User Research</li><li>Empathy map</li><li>Persona</li><li>Information Architecture</li><li>Wireframe &amp; Visual Design</li></ul></div>
+</section><section class="case-section">
+  <h2 class="reveal"><span class="num">05</span>The Double Diamond approach</h2>
+  <div class="prose reveal"><figure class="figure"><button class="frame" type="button" data-zoom="./assets/img/dd.jpg" aria-label="Enlarge image"><img src="./assets/site/img/assets-img-dd-1600.webp" alt="" width="1600" height="900" loading="lazy" decoding="async"></button></figure></div>
+</section><section class="case-section">
+  <h2 class="reveal"><span class="num">06</span>Understanding the travellers</h2>
+  <div class="prose reveal"><p>A thirst for adventure transcends age and background. Teenagers, backpackers, families, and professionals alike all share a desire to explore beyond the typical tourist path. The web interface provides a user-friendly experience for planning trips, regardless of location or device. Users can access TravelMate from laptops, tablets, or desktops, ensuring a convenient and efficient planning process.</p></div>
+</section><section class="case-section">
+  <h2 class="reveal"><span class="num">07</span>Qualitative research</h2>
+  <div class="prose reveal"><p>TravelMate conducted qualitative research through in-depth interviews with 30 adventurous travelers aged 16-50. The focus was on understanding their motivations for adventure travel, past travel experiences, and the frustrations they encountered. Here&#x27;s a glimpse into their qualitative insights:</p>
+<ul><li><strong>Thrill-Seeking:</strong> Participants expressed a strong desire for pushing boundaries and venturing beyond typical tourist experiences. Words like &quot;adventure,&quot; &quot;unique,&quot; and &quot;off-the-beaten-path&quot; were prevalent.</li><li><strong>Information Overload:</strong> While finding popular destinations was easy, participants found it difficult to unearth details about hidden gems, adventure activities, and local experiences. The feeling of information overload due to generic recommendations was a common theme.</li><li><strong>Booking Frustration:</strong> Juggling multiple platforms for research, flights, accommodation, and activities was a significant pain point. Participants described the booking process as time-consuming and tedious, desiring a streamlined solution.</li><li><strong>The Ideal Travel Companion:</strong> A recurring theme was the need for a user-friendly platform that would simplify the entire process. Participants envisioned features like: - Personalized recommendations: Tailored to interests, budget, and travel style. - Customizable itineraries: Incorporating exploration and exciting activities. - Integrated booking: A one-stop shop for booking everything.</li></ul></div>
+</section><section class="case-section">
+  <h2 class="reveal"><span class="num">08</span>Quantitative research</h2>
+  <div class="prose reveal"><p>TravelMate conducted a quantitative research survey with 30 adventurous travelers aged 16-50. The aim was to gather quantifiable data on their travel planning habits and preferences. Here are some key insights:</p>
+<h3>Time Investment:</h3>
+<ul><li><strong>Average time spent planning a trip:</strong> 7 - 8 hours</li><li>Percentage of participants who find planning a trip to be time-consuming: 63.3%</li></ul>
+<h3>Information Channeling :</h3>
+<ul><li>Number of online platforms used for travel research : 4 (Travel blog/websits, Social media platforms, Travel agencies, Destination Specific Websites).</li><li>Percentage of participants who find using multiple platforms frustrating : 73.4%</li><li>Average no of people find detailed information about off-the-beaten-path destinations and adventure activities online : 76.6%</li></ul>
+<h3>Limitations :</h3>
+<p>The data gathered from these 30 participants paints a preliminary picture of the challenges faced by adventurous travelers. Further research with a larger sample can solidify these findings and provide deeper insights. This data, combined with the qualitative research findings, can guide the development of TravelMate&#x27;s functionalities to effectively address user needs and preferences.</p></div>
+</section><section class="case-section">
+  <h2 class="reveal"><span class="num">09</span>Empathy map</h2>
+  <div class="prose reveal"><p>This empathy map outlines the thoughts, feelings, needs, and experiences of adventurous travelers who are the target audience for TravelMate.</p>
+<figure class="figure"><button class="frame" type="button" data-zoom="./assets/img/empathymap.png" aria-label="Enlarge image"><img src="./assets/site/img/assets-img-empathymap-1600.webp" alt="" width="595" height="842" loading="lazy" decoding="async"></button></figure></div>
+</section><section class="case-section">
+  <h2 class="reveal"><span class="num">10</span>Persona</h2>
+  <div class="prose reveal"><h3>Ruthresh Kumar</h3>
+<ul><li><strong>Demographics:</strong> Age group 18-35</li><li><strong>Budget:</strong> Flexible. Travel style: focuses on affordability and cultural experiences</li><li><strong>Needs:</strong> Ruthresh Kumar is a young, tech-savvy traveler who prioritizes affordability and cultural richness in his journeys. His ideal travel planning tool needs to be an all-encompassing, user-friendly platform that offers comprehensive search capabilities, customizable recommendations, and real-time updates. Features like itinerary sharing, integrated maps, and weather forecasts will enhance his travel experience, ensuring smooth and well-organized trips.</li></ul></div>
+</section><section class="case-section">
+  <h2 class="reveal"><span class="num">11</span>Storyboard: how it works</h2>
+  <div class="prose reveal"><p>Storyboarding is a visual planning tool that helps predict and refine how users will experience a product. (This focuses on the planning and improvement aspect)</p>
+<figure class="figure"><button class="frame" type="button" data-zoom="./assets/img/story%20board.png" aria-label="Enlarge image"><img src="./assets/site/img/assets-img-story-board-1600.webp" alt="" width="1024" height="662" loading="lazy" decoding="async"></button></figure></div>
+</section><section class="case-section">
+  <h2 class="reveal"><span class="num">12</span>User flow</h2>
+  <div class="prose reveal"><p>User flow creation streamlined my understanding of app navigation and task completion.</p>
+<figure class="figure"><button class="frame" type="button" data-zoom="./assets/img/closetuser.png" aria-label="Enlarge image"><img src="./assets/site/img/assets-img-closetuser-1600.webp" alt="" width="1500" height="2080" loading="lazy" decoding="async"></button></figure></div>
+</section><section class="case-section">
+  <h2 class="reveal"><span class="num">13</span>Information architecture</h2>
+  <div class="prose reveal"><p>The goal of IA is to create a user experience that is intuitive and efficient. Users shouldn&#x27;t have to waste time hunting for information – they should be able to find what they need quickly and easily.</p>
+<figure class="figure"><button class="frame" type="button" data-zoom="./assets/img/travelmate%20info.png" aria-label="Enlarge image"><img src="./assets/site/img/assets-img-travelmate-info-1600.webp" alt="" width="1600" height="1459" loading="lazy" decoding="async"></button></figure></div>
+</section><section class="case-section">
+  <h2 class="reveal"><span class="num">14</span>Sketch</h2>
+  <div class="prose reveal"><p>I tried sketching using CRAZY 8 method. The goal is to push beyond your first idea, frequently the least innovative, and to generate a wide variety of solutions to your challenge.</p>
+<figure class="figure"><button class="frame" type="button" data-zoom="./assets/img/sketch.jpg" aria-label="Enlarge image"><img src="./assets/site/img/assets-img-sketch-1600.webp" alt="" width="1600" height="1200" loading="lazy" decoding="async"></button></figure></div>
+</section><section class="case-section">
+  <h2 class="reveal"><span class="num">15</span>UI style guide</h2>
+  <div class="prose reveal"><ul><li>I have chosen Blue as my primary color, as Blue comes in a wide range of shades and tones, allowing you to evoke various emotions and functionalities within your design. Lighter blues can represent calmness and trust, while darker tones can suggest authority and security.</li><li>I have used Sans-Serif typeface &quot;Poppins&quot; as poppins offers a range of weights (thin, light, regular, medium, semi-bold, bold, extra-bold) and includes italics. This allows you to create a clear hierarchy between headings, subheadings, body text, and buttons.</li></ul>
+<figure class="figure"><button class="frame" type="button" data-zoom="./assets/img/Component1.png" aria-label="Enlarge image"><img src="./assets/site/img/assets-img-component1-1600.webp" alt="" width="1600" height="900" loading="lazy" decoding="async"></button></figure></div>
+</section><section class="case-section">
+  <h2 class="reveal"><span class="num">16</span>Wireframes &amp; visual design</h2>
+  <div class="prose reveal"><div class="gallery gallery--natural"><figure class="figure"><button class="frame" type="button" data-zoom="./assets/img/Home%20page%20w.png" aria-label="Enlarge image"><img src="./assets/site/img/assets-img-home-page-w-1600.webp" alt="homepage wireframes" width="1600" height="3633" loading="lazy" decoding="async"></button><figcaption>homepage wireframes</figcaption></figure><figure class="figure"><button class="frame" type="button" data-zoom="./assets/img/Home%20page.png" aria-label="Enlarge image"><img src="./assets/site/img/assets-img-home-page-1600.webp" alt="homepage" width="1600" height="3633" loading="lazy" decoding="async"></button><figcaption>homepage</figcaption></figure><figure class="figure"><button class="frame" type="button" data-zoom="./assets/img/Login%20Screen1.png" aria-label="Enlarge image"><img src="./assets/site/img/assets-img-login-screen1-1600.webp" alt="wireframes login page" width="1600" height="900" loading="lazy" decoding="async"></button><figcaption>wireframes login page</figcaption></figure><figure class="figure"><button class="frame" type="button" data-zoom="./assets/img/Login%20Screen.png" aria-label="Enlarge image"><img src="./assets/site/img/assets-img-login-screen-1600.webp" alt="login page" width="1600" height="900" loading="lazy" decoding="async"></button><figcaption>login page</figcaption></figure><figure class="figure"><button class="frame" type="button" data-zoom="./assets/img/Sign%20up%20page1.png" aria-label="Enlarge image"><img src="./assets/site/img/assets-img-sign-up-page1-1600.webp" alt="Wireframe signup" width="1600" height="900" loading="lazy" decoding="async"></button><figcaption>Wireframe signup</figcaption></figure><figure class="figure"><button class="frame" type="button" data-zoom="./assets/img/Sign%20up%20page.png" aria-label="Enlarge image"><img src="./assets/site/img/assets-img-sign-up-page-1600.webp" alt="signup" width="1600" height="900" loading="lazy" decoding="async"></button><figcaption>signup</figcaption></figure><figure class="figure"><button class="frame" type="button" data-zoom="./assets/img/collect%20info.png" aria-label="Enlarge image"><img src="./assets/site/img/assets-img-collect-info-1600.webp" alt="Wireframe collect info" width="1600" height="1369" loading="lazy" decoding="async"></button><figcaption>Wireframe collect info</figcaption></figure><figure class="figure"><button class="frame" type="button" data-zoom="./assets/img/AI%20customiztion.png" aria-label="Enlarge image"><img src="./assets/site/img/assets-img-ai-customiztion-1600.webp" alt="Collect info" width="1600" height="1369" loading="lazy" decoding="async"></button><figcaption>Collect info</figcaption></figure><figure class="figure"><button class="frame" type="button" data-zoom="./assets/img/Trip%20Page1.png" aria-label="Enlarge image"><img src="./assets/site/img/assets-img-trip-page1-1600.webp" alt="Trip itinerary Wireframe" width="1600" height="1068" loading="lazy" decoding="async"></button><figcaption>Trip itinerary Wireframe</figcaption></figure><figure class="figure"><button class="frame" type="button" data-zoom="./assets/img/Trip%20Page.png" aria-label="Enlarge image"><img src="./assets/site/img/assets-img-trip-page-1600.webp" alt="Trip itinerary" width="1600" height="1068" loading="lazy" decoding="async"></button><figcaption>Trip itinerary</figcaption></figure><figure class="figure"><button class="frame" type="button" data-zoom="./assets/img/Trip%20Page%204.png" aria-label="Enlarge image"><img src="./assets/site/img/assets-img-trip-page-4-1600.webp" alt="Itinerary" width="1600" height="1068" loading="lazy" decoding="async"></button><figcaption>Itinerary</figcaption></figure></div></div>
+</section></div>
+</article>
+<div class="wrap"><a class="next-project reveal" href="./closet.html"><span class="kicker"><span class="dot"></span>Next project</span><span class="big">Closet →</span></a></div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-big">Have an interesting, stupid or crazy idea you'd like some help building?</p>
+          <a class="btn" href="mailto:srigokulkrishnan@gmail.com">Let's talk <span class="arrow" aria-hidden="true">↗</span></a>
+        </div>
+        <div>
+          <h3>Pages</h3>
+          <ul><li><a href="./index.html">Home</a></li><li><a href="./work.html">Work</a></li><li><a href="./aboutme.html">About</a></li><li><a href="./blog.html">Writing</a></li></ul>
+        </div>
+        <div>
+          <h3>Elsewhere</h3>
+          <ul><li><a href="https://www.linkedin.com/in/sri-gokul-krishnan-/" rel="me noopener" target="_blank">LinkedIn</a></li><li><a href="https://www.instagram.com/srigokulkrishnan/" rel="me noopener" target="_blank">Instagram</a></li><li><a href="https://twitter.com/srigokulkrishn" rel="me noopener" target="_blank">X / Twitter</a></li><li><a href="mailto:srigokulkrishnan@gmail.com">Email</a></li></ul>
+        </div>
+      </div>
+      <div class="footer-base"><span>© <span data-year>2026</span> Sri Gokul Krishnan</span><span>Built with ❤️ from India.</span></div>
+    </div>
   </footer>
-  <div class="progress-wrap">
-    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-    </svg>
-  </div>
-  <script src="./assets/js/plugins.js"></script>
-  <script src="./assets/js/theme.js"></script>
+  <dialog class="lightbox" aria-label="Image preview">
+    <button class="icon-btn" type="button" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <img src="" alt=""><p></p>
+  </dialog>
+  <script src="./assets/site/site.js" defer></script>
 </body>
-
 </html>

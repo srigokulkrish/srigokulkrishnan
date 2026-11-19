@@ -1,0 +1,28 @@
+{
+  "title": "Rationing colour: one accent, used on purpose",
+  "date": "2026-11-19",
+  "summary": "Across Cosmonus, StayOnMap and Happenous I've ended up with the same rule: one accent colour, used so rarely that it means something.",
+  "cover": "./assets/img/cosmonus/about-2.jpg",
+  "tags": ["Design systems", "Colour", "Branding"],
+  "sections": [
+    {"heading": "", "body": [
+      {"p": "Three products, three palettes, and one rule I keep coming back to: pick a single accent colour and ration it. Not as a style preference, but because colour is a signal, and a signal that appears everywhere stops meaning anything."}
+    ]},
+    {"heading": "Cosmonus: a dot that says \"you are here\"", "body": [
+      {"p": "The Cosmonus site is almost entirely ink, greys and photography. Its violet, #635BFF, appears as small 8px marker dots, like the one beside the section you're in, and in one kind of link. That's it. Because it's so rare, the eye finds it immediately, and it does the job a whole navigation bar would otherwise have to do."},
+      {"swatches": [["Ink", "#0F0F0F"], ["Line", "#E4E4E1"], ["Cosmonus violet", "#635BFF"]]}
+    ]},
+    {"heading": "Happenous: once per screen", "body": [
+      {"p": "In Happenous, the brand orange #FC4C02 may appear at most once per viewport: on the primary button, the active state, or a count worth noticing. It never fills a surface bigger than a button, never carries body text, and there are no gradients in the system at all. On any screen, the orange thing is the thing to do next."},
+      {"swatches": [["Ground", "#FFFFFF"], ["Ink", "#222222"], ["Happenous Orange", "#FC4C02"]]}
+    ]},
+    {"heading": "StayOnMap: jade, with categories kept separate", "body": [
+      {"p": "StayOnMap is jade end to end. An earlier orange accent was retired completely, including from the map's search marker, which now stands apart by weight and shape rather than a second hue. The one deliberate exception is the set of colours that tell property types apart on the map: those are data, not brand, and they're kept distinct on purpose."},
+      {"p": "Rationing also made accessibility easier to get right. When colour isn't doing ten jobs, it's straightforward to check that the one shade used for text on a fill actually passes contrast, and to keep muted text dark enough to read."},
+      {"swatches": [["Jade 50", "#EDFAF7"], ["Jade 600", "#0D8A5F"], ["Jade 700", "#0A6E4B"]]}
+    ]},
+    {"heading": "The rule, in one line", "body": [
+      {"p": "Decide what your accent means, then only use it when that meaning is true. Everything else can be ink, grey and whitespace, and it'll look calmer and read faster for it."}
+    ]}
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "title": "Fluid.Work",
+  "tagline": "A voyage with Fluidwork UK",
+  "meta": [
+    [
+      "Client",
+      "Fluidwork Business Solution, UK"
+    ],
+    [
+      "Scope",
+      "Brand identity, marketing assets, website"
+    ]
+  ],
+  "links": [],
+  "sections": [
+    {
+      "heading": "The story",
+      "body": [
+        {
+          "p": "The opportunity with Fluidwork Business Solution UK has been truly transformative for me. It all began with a recommendation from a dear friend who connected me with Dan Justin, the CEO of Fluidwork. I vividly recall our initial 10-minute conversation, filled with excitement about the prospect of collaborating with Dan."
+        },
+        {
+          "p": "Our journey together started modestly, with Dan expressing his desire to rebrand the company. He sought a design that seamlessly embodied the essence of Fluidwork, flowing effortlessly like the curve it represents. We began with logo design, exploring various concepts in our pursuit of the perfect fit. Despite encountering challenges along the way, we remained dedicated to our vision."
+        },
+        {
+          "p": "On the second day, our efforts bore fruit as we meticulously refined our designs, resulting in three distinct logo options. Dan sought feedback from the team, and with unanimous enthusiasm, we selected the winning logo. From that moment onward, we embarked on the creation of websites and marketing posters, solidifying Fluidwork's new identity across various platforms."
+        },
+        {
+          "img": "./assets/img/fluid/color 8.png",
+          "caption": ""
+        },
+        {
+          "img": "./assets/img/fluid/color 11.png",
+          "caption": ""
+        },
+        {
+          "img": "./assets/img/fluid/color 10.png",
+          "caption": ""
+        },
+        {
+          "img": "./assets/img/fluid/poster 5.png",
+          "caption": ""
+        },
+        {
+          "img": "./assets/img/fluid/poster 3.png",
+          "caption": ""
+        }
+      ]
+    },
+    {
+      "heading": "About Fluidwork",
+      "body": [
+        {
+          "p": "Fluidwork Business Solution UK offers a comprehensive project and program management solution. Fluid empowers teams with a shared purpose to collaborate more effectively in meetings, projects, and various team activities."
+        },
+        {
+          "p": "The visual identity of the brand takes cues from the minimalist lifestyle and aesthetic. Embracing minimalist design principles, it advances ideas by distilling them to their essential elements, employing clean, modern, and minimalistic choices in aesthetics, fonts, and colors."
+        },
+        {
+          "img": "./assets/img/fluid/facebook poster.png",
+          "caption": ""
+        },
+        {
+          "img": "./assets/img/fluid/poster 9.png",
+          "caption": ""
+        },
+        {
+          "img": "./assets/img/fluid/poster 13.png",
+          "caption": ""
+        },
+        {
+          "img": "./assets/img/fluid/poster 14.png",
+          "caption": ""
+        },
+        {
+          "img": "./assets/img/fluid/poster 15.png",
+          "caption": ""
+        }
+      ]
+    }
+  ],
+  "hero": "./assets/img/fluid/primary.png"
+}

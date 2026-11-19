@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why the map is the homepage · Sri Gokul Krishnan</title>
+  <meta name="description" content="Designing StayOnMap started with one decision: a rental app where the map is the product, not a widget on a listing page.">
+  <meta name="author" content="Sri Gokul Krishnan">
+  <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e0e0d" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Why the map is the homepage · Sri Gokul Krishnan">
+  <meta property="og:description" content="Designing StayOnMap started with one decision: a rental app where the map is the product, not a widget on a listing page.">
+  <meta property="og:image" content="https://www.srigokulkrishnan.com/assets/img/stayonmap/card-map.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="./assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=Instrument+Serif:ital@0;1&display=swap">
+  <link rel="stylesheet" href="./assets/site/site.css">
+  <script>
+    document.documentElement.classList.add('js');
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="./index.html" aria-label="Sri Gokul Krishnan, home"><span class="dot" aria-hidden="true"></span>Sri Gokul Krishnan</a>
+      <nav class="nav" id="nav" aria-label="Main"><a href="work.html">Work</a><a href="aboutme.html">About</a><a href="blog.html" aria-current="page">Writing</a><a href="mailto:srigokulkrishnan@gmail.com">Contact</a></nav>
+      <div class="header-actions">
+        <button class="icon-btn theme-toggle" type="button" aria-label="Switch light or dark theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
+        <button class="icon-btn menu-btn" type="button" aria-label="Menu" aria-controls="nav" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg></button>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+<article>
+<header class="article-head"><div class="wrap narrow" style="margin-inline:auto">
+  <a class="crumb reveal" href="./blog.html">← All writing</a>
+  <h1 class="reveal">Why the map is the homepage</h1>
+  <p class="lead reveal">Designing StayOnMap started with one decision: a rental app where the map is the product, not a widget on a listing page.</p>
+  <div class="post-meta reveal"><span>Sri Gokul Krishnan</span><span class="sep"></span><time datetime="2026-11-19">19 November 2026</time><span class="sep"></span><span>3 min read</span></div>
+</div></header>
+<div class="wrap"><div class="article-cover reveal"><img src="./assets/site/img/assets-img-stayonmap-card-map-2000.webp" alt="" width="1400" height="934" fetchpriority="high"></div>
+<div class="article prose"><p>When people in India look for a flat, the first question is rarely &quot;how many bedrooms?&quot;. It&#x27;s &quot;where?&quot;. Near the office, near the metro, near my parents, not across that railway line. Yet most rental apps open on a list: a feed of cards sorted by something you didn&#x27;t choose, with the location reduced to a line of grey text.</p>
+<p>So when I started designing StayOnMap, the first decision was the one everything else depended on: the map is the homepage. Not a map tab, not a map button on a list. The map is the product, and everything else floats on top of it.</p><h2>What that decision costs, and buys</h2><p>Putting the map first sounds simple until you design around it. A list can show twenty listings with photos and prices. A map shows pins, and a pin has room for almost nothing. That constraint turned out to be useful, because it forced us to decide what actually matters at a glance.</p>
+<ul><li>Price on the pin, because budget is the first filter everyone applies.</li><li>The kind of property as a small glyph, because a plot and a flat at the same price are very different things.</li><li>Everything else (photos, trust badge, deposit, what&#x27;s nearby) one tap away, in a preview that opens over the map instead of navigating away from it.</li></ul>
+<p>We also styled most of the base map&#x27;s business labels off. A standard map is crowded with restaurants and shops, and they compete with the only pins that matter here. Removing them made the map calmer and the listings easier to see.</p><h2>Panning is a query</h2><p>On a list, searching means typing. On a map, panning to a neighbourhood is already a search. StayOnMap treats it that way: the visible area is part of the query, and a count of homes in view updates as you move. When you want a list, the count is the way in, and the list carries the same area and filters, so the two never disagree.</p>
+<p>This shaped mobile too. On a small screen a full-screen map is easy to get trapped in, so a map embedded inside a scrolling page uses cooperative gestures (two fingers to pan) while the full-screen map takes every gesture. It&#x27;s a small detail, but getting it wrong makes the whole page feel broken.</p><h2>Being honest about place</h2><p>Once location is the product, every fact about a place has to be trustworthy. StayOnMap shows what&#x27;s around each home, and every one of those facts is labelled as measured, derived or estimated. Distances read &quot;420 m away&quot;, never &quot;6 min walk&quot;, because a straight-line distance across a railway line can be a much longer walk, and an invented walking time looks precise while being wrong.</p>
+<p>I think that&#x27;s the real lesson of designing map-first. The map makes location visible, so it also makes every shortcut visible. The design has to earn the trust the map invites.</p><div class="tags" style="margin-top:2.4em"><span class="tag">StayOnMap</span><span class="tag">Product design</span><span class="tag">Maps</span></div></div></div>
+</article>
+<section class="section"><div class="wrap"><div class="section-head"><h2>Keep reading</h2></div><div class="post-list"><a class="post-row reveal" href="./post-designing-for-showing-up.html">
+  <div class="thumb"><img src="./assets/site/img/assets-img-happenous-card-out-of-app-800.webp" alt="" width="800" height="534" loading="lazy" decoding="async"></div>
+  <div><div class="post-meta"><time datetime="2026-11-19">19 November 2026</time><span class="sep"></span><span>2 min read</span></div>
+  <h3>Designing for showing up</h3><p>Happenous is a social app that measures success by whether you left the house. Here&#x27;s how check-in, Crews and &quot;two locations&quot; shape the design.</p></div>
+</a><a class="post-row reveal" href="./post-rationing-colour.html">
+  <div class="thumb"><img src="./assets/site/img/assets-img-cosmonus-about-2-800.webp" alt="" width="800" height="534" loading="lazy" decoding="async"></div>
+  <div><div class="post-meta"><time datetime="2026-11-19">19 November 2026</time><span class="sep"></span><span>2 min read</span></div>
+  <h3>Rationing colour: one accent, used on purpose</h3><p>Across Cosmonus, StayOnMap and Happenous I&#x27;ve ended up with the same rule: one accent colour, used so rarely that it means something.</p></div>
+</a></div></div></section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-big">Have an interesting, stupid or crazy idea you'd like some help building?</p>
+          <a class="btn" href="mailto:srigokulkrishnan@gmail.com">Let's talk <span class="arrow" aria-hidden="true">↗</span></a>
+        </div>
+        <div>
+          <h3>Pages</h3>
+          <ul><li><a href="./index.html">Home</a></li><li><a href="./work.html">Work</a></li><li><a href="./aboutme.html">About</a></li><li><a href="./blog.html">Writing</a></li></ul>
+        </div>
+        <div>
+          <h3>Elsewhere</h3>
+          <ul><li><a href="https://www.linkedin.com/in/sri-gokul-krishnan-/" rel="me noopener" target="_blank">LinkedIn</a></li><li><a href="https://www.instagram.com/srigokulkrishnan/" rel="me noopener" target="_blank">Instagram</a></li><li><a href="https://twitter.com/srigokulkrishn" rel="me noopener" target="_blank">X / Twitter</a></li><li><a href="mailto:srigokulkrishnan@gmail.com">Email</a></li></ul>
+        </div>
+      </div>
+      <div class="footer-base"><span>© <span data-year>2026</span> Sri Gokul Krishnan</span><span>Built with ❤️ from India.</span></div>
+    </div>
+  </footer>
+  <dialog class="lightbox" aria-label="Image preview">
+    <button class="icon-btn" type="button" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <img src="" alt=""><p></p>
+  </dialog>
+  <script src="./assets/site/site.js" defer></script>
+</body>
+</html>
