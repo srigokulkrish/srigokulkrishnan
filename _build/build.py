@@ -593,7 +593,6 @@ def build_thanks() -> None:
 def build_about() -> None:
     a = SITE["about"]
     socials = "".join(f'<li><a href="{u}" rel="me noopener" target="_blank">{n}</a></li>' for n, u in SITE["social"])
-    exp = SITE["experiments"][0]
     body = f"""<section class="hero"><div class="wrap">
   <span class="kicker reveal"><span class="dot"></span>About</span>
   <h1 class="reveal">Designer, developer and <span class="serif">founder</span>.</h1>
@@ -628,7 +627,6 @@ def build_about() -> None:
   </div>
 </section>
 {quotes_block()}
-<section class="section" aria-labelledby="experiments"><div class="wrap">{experiment(exp)}</div></section>
 {cta()}"""
     write("aboutme.html", layout("About", f"About {SITE['name']}: product designer and frontend developer, founder of Cosmonus (StayOnMap, Happenous) and previously the AstusX design studio.", body, "aboutme.html", a["photo"], name="aboutme.html",
                                  jsonld=[person_ld(), {"@type": "ProfilePage", "url": canonical("aboutme.html"), "mainEntity": {"@id": f"{ORIGIN}/#person"}}]))
