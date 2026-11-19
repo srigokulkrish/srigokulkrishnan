@@ -186,10 +186,10 @@ def layout(title: str, description: str, body: str, current: str = "", image: st
   <a class="skip" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="wrap">
-      <a class="wordmark" href="./index.html" aria-label="{e(SITE['name'])}, home"><span class="dot" aria-hidden="true"></span>{e(SITE['name'])}</a>
+      <a class="wordmark" href="./index.html" aria-label="{e(SITE['name'])}, home">{e(SITE['name'])}</a>
       <nav class="nav" id="nav" aria-label="Main">{nav}</nav>
       <div class="header-actions">
-        <a class="btn btn--sm header-cta" href="{CONTACT}">Start a project</a>
+        <a class="btn btn--sm btn--accent header-cta" href="{CONTACT}">Start a project</a>
         <button class="icon-btn theme-toggle" type="button" aria-label="Switch light or dark theme">{ICON['sun']}{ICON['moon']}</button>
         <button class="icon-btn menu-btn" type="button" aria-label="Menu" aria-controls="nav" aria-expanded="false">{ICON['menu']}</button>
       </div>
@@ -274,8 +274,9 @@ def quotes_block() -> str:
     )
     return f"""<section class="section" aria-labelledby="kind-words">
   <div class="wrap">
-    <div class="section-head reveal"><div><span class="kicker"><span class="dot"></span>Kind words</span><h2 id="kind-words" style="margin-top:14px">What people say about working with me</h2></div></div>
-    <div class="quotes reveal" tabindex="0" aria-label="Testimonials, scroll sideways">{items}</div>
+    <div class="section-head reveal"><div><span class="kicker"><span class="dot"></span>Kind words</span><h2 id="kind-words" style="margin-top:14px">What people say about working with me</h2></div>
+    <div class="carousel-nav" hidden><button class="icon-btn" type="button" data-carousel-prev aria-controls="quotes" aria-label="Previous testimonials">←</button><button class="icon-btn" type="button" data-carousel-next aria-controls="quotes" aria-label="Next testimonials">→</button></div></div>
+    <div class="quotes reveal" id="quotes" tabindex="0" role="region" aria-label="Testimonials, scroll sideways">{items}</div>
   </div>
 </section>"""
 

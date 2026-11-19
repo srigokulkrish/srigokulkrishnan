@@ -67,6 +67,33 @@
     dialog.addEventListener('click', (e) => { if (e.target === dialog || e.target.closest('button')) dialog.close(); });
   }
 
+  // Testimonial carousel: arrows move one card; they disable at either end and hide when everything fits.
+  const track = document.querySelector('.quotes');
+  const navBox = document.querySelector('.carousel-nav');
+  if (track && navBox) {
+    const prev = navBox.querySelector('[data-carousel-prev]');
+    const next = navBox.querySelector('[data-carousel-next]');
+    const step = () => {
+      const card = track.querySelector('.quote');
+      return card ? card.getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 20) : track.clientWidth;
+    };
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      navBox.hidden = max <= 4;
+      prev.disabled = track.scrollLeft <= 4;
+      next.disabled = track.scrollLeft >= max - 4;
+    };
+    prev.addEventListener('click', () => track.scrollBy({ left: -step() }));
+    next.addEventListener('click', () => track.scrollBy({ left: step() }));
+    track.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') { e.preventDefault(); track.scrollBy({ left: step() }); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); track.scrollBy({ left: -step() }); }
+    });
+    track.addEventListener('scroll', update, { passive: true });
+    addEventListener('resize', update);
+    update();
+  }
+
   const year = document.querySelector('[data-year]');
   if (year) year.textContent = new Date().getFullYear();
 })();
