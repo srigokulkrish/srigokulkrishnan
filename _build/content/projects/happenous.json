@@ -1,51 +1,209 @@
 {
   "title": "Happenous",
   "tagline": "Your next plan is already happening",
-  "meta": [["Type", "Product"], ["Platform", "Android · iPhone coming soon"], ["Market", "Twenty Indian cities"], ["Status", "Live on Google Play"]],
-  "links": [["Visit happenous.com", "https://www.happenous.com"], ["Get it on Google Play", "https://play.google.com/store/apps/details?id=com.happenous.app"]],
+  "meta": [
+    [
+      "Type",
+      "Product"
+    ],
+    [
+      "Role",
+      "Founder · design and development"
+    ],
+    [
+      "Platform",
+      "Android · iPhone coming soon"
+    ],
+    [
+      "Market",
+      "Twenty Indian cities"
+    ],
+    [
+      "Status",
+      "Live on Google Play"
+    ]
+  ],
+  "links": [
+    [
+      "Visit happenous.com",
+      "https://www.happenous.com"
+    ],
+    [
+      "Get it on Google Play",
+      "https://play.google.com/store/apps/details?id=com.happenous.app"
+    ]
+  ],
   "hero": "./assets/img/happenous/primary.png",
   "sections": [
-    {"heading": "Off the screen, on purpose", "body": [
-      {"p": "Most social apps are designed to keep you on the screen. Happenous is designed to get you off it. It's an activity-first social network for meeting people in real life: runs, badminton, coffee, photo walks. You see what people near you are actually doing, ask to join the Crew, and go."},
-      {"p": "The question it answers is simple: what can I actually do today? It rewards real-world action, never time spent in the app."}
-    ]},
-    {"heading": "How it works", "body": [
-      {"steps": [
-        ["Find an Activity", "See what's Happening around you, today or this weekend, as a list or on a map."],
-        ["Join the Crew", "Ask to join. Once the Host accepts, the exact meeting point and Crew chat open."],
-        ["Show up", "Meet the group and check in with the Host's six-character code."],
-        ["Keep going", "Review the people you met, share Moments, and earn Recognition."]
-      ]},
-      {"gallery": [
-        {"img": "./assets/img/happenous/card-activities.jpg", "caption": "Activities, not events."},
-        {"img": "./assets/img/happenous/card-nearby.jpg", "caption": "What's happening nearby."}
-      ]}
-    ]},
-    {"heading": "Designed around trust", "body": [
-      {"sub": "A location is two locations"},
-      {"p": "Until a Host accepts you, an Activity shows only an area about 3 km across. The exact meeting point is visible only to the accepted Crew. Discovery never touches the real address."},
-      {"sub": "Attendance is the anchor"},
-      {"p": "Check-in turns \"accepted\" into \"was there\", and only people who were there can review each other. The check-in shows someone had the Host's code during the Activity. Happenous is honest that it runs no ID or background checks."},
-      {"sub": "Nothing claims more than it can prove"},
-      {"p": "Badges come from recorded events, and review rates stay hidden until enough people have written one. Buddies form only after you've done something together. There are no one-way follows."},
-      {"img": "./assets/img/happenous/card-out-of-app.jpg", "caption": "Life happens outside the feed."}
-    ]},
-    {"heading": "Words are part of the design", "body": [
-      {"p": "The vocabulary is load-bearing and used the same way in the app, the website and the code. Choosing it was a design decision, because each word sets an expectation about how people relate to each other."},
-      {"pairs": [["Activity", "not event"], ["Host", "not organiser"], ["Crew", "not attendees"], ["Buddy", "not follower"], ["Check-in", "not attendance"], ["Moment", "not post"], ["Happening", "not explore"], ["Recognition", "not leaderboard"]]}
-    ]},
-    {"heading": "Design system", "body": [
-      {"p": "White is the ground everywhere, separated by whitespace and a single hairline, never by tinted panels. There is one brand colour, Happenous Orange, and it appears at most once per screen: on the primary button, the active state, or a count. There are no gradients anywhere in the system."},
-      {"swatches": [["Happenous Orange", "#FC4C02"], ["Orange subtle", "#FFF6F1"], ["Ink", "#222222"], ["Secondary text", "#717171"], ["Hairline", "#EBEBEB"]]},
-      {"list": [
-        "Outfit for headings and the wordmark, Inter for everything else, on a short type ladder from 11px to 32px.",
-        "Radii of 16 for cards and sheets, 12 for images and 8 for inputs, with pill-shaped buttons.",
-        "Motion in three steps (120, 200 and 320 ms), plus a 480 ms \"celebrate\" duration reserved for Buddy connections and milestones. It's never used for penalties, and reduced motion is respected everywhere."
-      ]}
-    ]},
-    {"heading": "Under the hood", "body": [
-      {"p": "An Expo and React Native app with expo-router, an Express and TypeScript API on PostgreSQL with PostGIS for the location rules, a React moderation console for administrators, and a static marketing site. Everything runs on Google Cloud."},
-      {"img": "./assets/img/happenous/banner.jpg", "caption": ""}
-    ]}
+    {
+      "heading": "Off the screen, on purpose",
+      "body": [
+        {
+          "p": "Most social apps are designed to keep you on the screen. Happenous is designed to get you off it. It's an activity-first social network for meeting people in real life: runs, badminton, coffee, photo walks. You see what people near you are actually doing, ask to join the Crew, and go."
+        },
+        {
+          "p": "The question it answers is simple: what can I actually do today? It rewards real-world action, never time spent in the app."
+        }
+      ]
+    },
+    {
+      "heading": "How it works",
+      "body": [
+        {
+          "steps": [
+            [
+              "Find an Activity",
+              "See what's Happening around you, today or this weekend, as a list or on a map."
+            ],
+            [
+              "Join the Crew",
+              "Ask to join. Once the Host accepts, the exact meeting point and Crew chat open."
+            ],
+            [
+              "Show up",
+              "Meet the group and check in with the Host's six-character code."
+            ],
+            [
+              "Keep going",
+              "Review the people you met, share Moments, and earn Recognition."
+            ]
+          ]
+        },
+        {
+          "gallery": [
+            {
+              "img": "./assets/img/happenous/card-activities.jpg",
+              "caption": "Activities, not events."
+            },
+            {
+              "img": "./assets/img/happenous/card-nearby.jpg",
+              "caption": "What's happening nearby."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Designed around trust",
+      "body": [
+        {
+          "sub": "A location is two locations"
+        },
+        {
+          "p": "Until a Host accepts you, an Activity shows only an area about 3 km across. The exact meeting point is visible only to the accepted Crew. Discovery never touches the real address."
+        },
+        {
+          "sub": "Attendance is the anchor"
+        },
+        {
+          "p": "Check-in turns \"accepted\" into \"was there\", and only people who were there can review each other. The check-in shows someone had the Host's code during the Activity. Happenous is honest that it runs no ID or background checks."
+        },
+        {
+          "sub": "Nothing claims more than it can prove"
+        },
+        {
+          "p": "Badges come from recorded events, and review rates stay hidden until enough people have written one. Buddies form only after you've done something together. There are no one-way follows."
+        },
+        {
+          "img": "./assets/img/happenous/card-out-of-app.jpg",
+          "caption": "Life happens outside the feed."
+        }
+      ]
+    },
+    {
+      "heading": "Words are part of the design",
+      "body": [
+        {
+          "p": "The vocabulary is load-bearing and used the same way in the app, the website and the code. Choosing it was a design decision, because each word sets an expectation about how people relate to each other."
+        },
+        {
+          "pairs": [
+            [
+              "Activity",
+              "not event"
+            ],
+            [
+              "Host",
+              "not organiser"
+            ],
+            [
+              "Crew",
+              "not attendees"
+            ],
+            [
+              "Buddy",
+              "not follower"
+            ],
+            [
+              "Check-in",
+              "not attendance"
+            ],
+            [
+              "Moment",
+              "not post"
+            ],
+            [
+              "Happening",
+              "not explore"
+            ],
+            [
+              "Recognition",
+              "not leaderboard"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Design system",
+      "body": [
+        {
+          "p": "White is the ground everywhere, separated by whitespace and a single hairline, never by tinted panels. There is one brand colour, Happenous Orange, and it appears at most once per screen: on the primary button, the active state, or a count. There are no gradients anywhere in the system."
+        },
+        {
+          "swatches": [
+            [
+              "Happenous Orange",
+              "#FC4C02"
+            ],
+            [
+              "Orange subtle",
+              "#FFF6F1"
+            ],
+            [
+              "Ink",
+              "#222222"
+            ],
+            [
+              "Secondary text",
+              "#717171"
+            ],
+            [
+              "Hairline",
+              "#EBEBEB"
+            ]
+          ]
+        },
+        {
+          "list": [
+            "Outfit for headings and the wordmark, Inter for everything else, on a short type ladder from 11px to 32px.",
+            "Radii of 16 for cards and sheets, 12 for images and 8 for inputs, with pill-shaped buttons.",
+            "Motion in three steps (120, 200 and 320 ms), plus a 480 ms \"celebrate\" duration reserved for Buddy connections and milestones. It's never used for penalties, and reduced motion is respected everywhere."
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Under the hood",
+      "body": [
+        {
+          "p": "An Expo and React Native app with expo-router, an Express and TypeScript API on PostgreSQL with PostGIS for the location rules, a React moderation console for administrators, and a static marketing site. Everything runs on Google Cloud."
+        },
+        {
+          "img": "./assets/img/happenous/banner.jpg",
+          "caption": ""
+        }
+      ]
+    }
   ]
 }
