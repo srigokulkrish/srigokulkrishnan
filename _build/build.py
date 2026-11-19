@@ -432,6 +432,7 @@ def build_about() -> None:
 <section class="section" style="padding-top:0"><div class="wrap about-grid">
   <div class="prose reveal">{''.join(f'<p>{e(p)}</p>' for p in a['intro'])}
     <h3>Get in touch</h3>
+    <p>If you want to work with me, feel free to reach out at <a href="mailto:{SITE['email']}">{e(SITE['email'])}</a>.</p>
     <ul class="contact-list"><li><a href="mailto:{SITE['email']}">{e(SITE['email'])}</a></li><li><a href="tel:{SITE['phone'].replace(' ', '')}">{e(SITE['phone'])}</a></li>{socials}</ul>
   </div>
   <div class="about-photo reveal">{img(a['photo'], SITE['name'], eager=True, width=900)}</div>
