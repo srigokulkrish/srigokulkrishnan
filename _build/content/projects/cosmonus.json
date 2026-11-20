@@ -3,7 +3,7 @@
   "tagline": "Building real-world intelligence",
   "meta": [["Type", "Company"], ["Products", "StayOnMap, Happenous"], ["Scope", "Brand, website, studio"], ["Status", "Live"]],
   "links": [["Visit cosmonus.com", "https://www.cosmonus.com"]],
-  "hero": "./assets/img/cosmonus/primary.png",
+  "hero": "./assets/img/cosmonus/cover.jpg",
   "sections": [
     {"heading": "Why Cosmonus exists", "body": [
       {"p": "Most software understands text. Very little of it understands a street, a home, or a group of people deciding what to do this evening. Cosmonus is the parent company for products, research and systems that understand the physical world: where things are, what they mean, and what to do next."},
