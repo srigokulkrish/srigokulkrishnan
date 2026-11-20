@@ -203,7 +203,7 @@ def layout(title: str, description: str, body: str, current: str = "", image: st
       <div class="footer-grid">
         <div>
           <p class="footer-big">Have a product, website or idea you'd like help building?</p>
-          <div class="btns"><a class="btn" href="{CONTACT}">Start a project {ARROW}</a><a class="btn btn--ghost" href="{wa_link()}" target="_blank" rel="noopener">WhatsApp me</a></div>
+          <div class="btns"><a class="btn" href="{CONTACT}">Start a project {ARROW}</a><a class="btn btn--wa" href="{wa_link()}" target="_blank" rel="noopener">WhatsApp me</a></div>
         </div>
         <div>
           <h3>Pages</h3>
@@ -370,7 +370,7 @@ def cta(title: str = "Have a product, website or idea you'd like help building?"
   <span class="kicker" style="color:inherit;opacity:.7"><span class="dot"></span>Let's work together</span>
   <h2>{e(title)}</h2>
   <p class="cta-lead">Tell me what you're building. I'll come back with questions, a plan and a clear next step.</p>
-  <div class="btns"><a class="btn" href="{CONTACT}">Start a project {ARROW}</a><a class="btn btn--ghost" href="{e(wa_link())}" target="_blank" rel="noopener">Message me on WhatsApp</a></div>
+  <div class="btns"><a class="btn" href="{CONTACT}">Start a project {ARROW}</a><a class="btn btn--wa" href="{e(wa_link())}" target="_blank" rel="noopener">Message me on WhatsApp</a></div>
 </div></div></section>"""
 
 
@@ -586,7 +586,7 @@ def build_thanks() -> None:
   <span class="kicker" style="justify-content:center"><span class="dot"></span>Message sent</span>
   <h1 style="font-size:clamp(48px,8vw,96px)">Thank <span class="serif">you</span>.</h1>
   <p class="lead" style="margin-inline:auto">Your project details have reached me. I'll read them and reply by email with any questions and the next step. If it's urgent, message me on WhatsApp.</p>
-  <div class="btns" style="justify-content:center"><a class="btn" href="{e(wa_link())}" target="_blank" rel="noopener">WhatsApp me</a><a class="btn btn--ghost" href="./work.html">Look at more work</a></div>
+  <div class="btns" style="justify-content:center"><a class="btn btn--wa" href="{e(wa_link())}" target="_blank" rel="noopener">WhatsApp me</a><a class="btn btn--ghost" href="./work.html">Look at more work</a></div>
 </section>"""
     write("thanks.html", layout("Thank you", "Your project details were sent.", body, name="thanks.html", index=False, whatsapp=False))
 

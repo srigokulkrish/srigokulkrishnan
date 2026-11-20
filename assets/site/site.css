@@ -229,8 +229,8 @@ a.row:hover .row-name { color: var(--accent); }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 32px; }
 .footer-grid h3 { font: 500 13px/1 var(--font-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
 .footer-grid ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
-.footer-grid a { text-decoration: none; color: var(--ink-2); }
-.footer-grid a:hover { color: var(--accent); }
+.footer-grid a:not(.btn) { text-decoration: none; color: var(--ink-2); }
+.footer-grid a:not(.btn):hover { color: var(--accent); }
 .footer-big { font: 600 clamp(26px, 3vw, 36px)/1.15 var(--font-display); letter-spacing: -0.03em; max-width: 18ch; margin-bottom: 18px; }
 .footer-base { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
 @media (max-width: 760px) { .footer-grid { grid-template-columns: 1fr 1fr; } .footer-grid > :first-child { grid-column: 1 / -1; } }
@@ -362,12 +362,17 @@ a.experiment:hover { color: inherit; border-color: var(--ink); }
 .masonry .figure { break-inside: avoid; margin-bottom: 16px; }
 .masonry .figure figcaption { margin-top: 6px; }
 
+/* WhatsApp green: white text needs a darker green than #25d366 to stay readable (5:1) */
+:root { --wa: #15803d; --wa-strong: #166534; }
+.btn.btn--wa, .cta .btn.btn--wa { background: var(--wa); border-color: var(--wa); color: #fff; }
+.btn.btn--wa:hover, .cta .btn.btn--wa:hover { background: var(--wa-strong); border-color: var(--wa-strong); color: #fff; }
+
 /* WhatsApp: floating "message me" button (home page) */
 .wa-fab { position: fixed; right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 60;
   display: inline-flex; align-items: center; gap: 10px; height: 56px; padding: 0 20px 0 16px; border-radius: 999px;
-  background: #25d366; color: #0b2b16; font: 600 15px/1 var(--font-sans); text-decoration: none;
+  background: var(--wa); color: #fff; font: 600 15px/1 var(--font-sans); text-decoration: none;
   box-shadow: 0 8px 24px -6px rgb(18 140 70 / .55); transition: transform var(--t-fast) var(--ease), box-shadow var(--t-fast); }
-.wa-fab:hover { color: #0b2b16; transform: translateY(-2px); box-shadow: 0 12px 28px -6px rgb(18 140 70 / .6); }
+.wa-fab:hover { color: #fff; background: var(--wa-strong); transform: translateY(-2px); box-shadow: 0 12px 28px -6px rgb(18 140 70 / .6); }
 .wa-fab svg { width: 26px; height: 26px; flex: none; }
 @media (max-width: 560px) { .wa-fab { width: 56px; padding: 0; justify-content: center; } .wa-fab span { display: none; } }
 
@@ -443,8 +448,8 @@ ol.tiles { list-style: none; padding: 0; margin: 0; }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .contact-side { position: sticky; top: 96px; }
 @media (max-width: 900px) { .contact-side { position: static; } }
-.wa-card { display: flex; align-items: center; gap: 16px; padding: 20px; border-radius: var(--r-lg); background: #25d366; color: #0b2b16; text-decoration: none; transition: transform var(--t-fast) var(--ease); }
-.wa-card:hover { color: #0b2b16; transform: translateY(-2px); }
+.wa-card { display: flex; align-items: center; gap: 16px; padding: 20px; border-radius: var(--r-lg); background: var(--wa); color: #fff; text-decoration: none; transition: transform var(--t-fast) var(--ease); }
+.wa-card:hover { color: #fff; background: var(--wa-strong); transform: translateY(-2px); }
 .wa-card svg { width: 34px; height: 34px; flex: none; }
 .wa-card strong { display: block; font: 600 18px/1.2 var(--font-display); }
 .wa-card small { font-size: 14px; opacity: .85; }
